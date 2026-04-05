@@ -3,8 +3,12 @@
 namespace App\Http\Controllers\Public;
 
 use App\Http\Controllers\Controller;
+use App\Mail\LeadConfirmation;
+use App\Mail\NewLeadNotification;
 use App\Models\Lead;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 
 class LeadController extends Controller
 {
@@ -25,7 +29,14 @@ class LeadController extends Controller
         $validated['utm_params'] = $request->only(['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content']);
         $validated['form_type'] = $validated['form_type'] ?? 'demo';
 
-        Lead::create($validated);
+        $lead = Lead::create($validated);
+
+        try {
+            Mail::to('info@atherislimited.com')->send(new NewLeadNotification($lead));
+            Mail::to($lead->email)->send(new LeadConfirmation($lead));
+        } catch (\Exception $e) {
+            Log::error('Lead email failed: ' . $e->getMessage());
+        }
 
         if ($request->wantsJson()) {
             return response()->json(['success' => true, 'message' => 'Thank you! We will be in touch shortly.']);
@@ -40,13 +51,20 @@ class LeadController extends Controller
             'email' => 'required|email|max:255',
         ]);
 
-        Lead::create([
+        $lead = Lead::create([
             'first_name' => 'Newsletter',
             'last_name' => 'Subscriber',
             'email' => $validated['email'],
             'form_type' => 'newsletter',
             'source' => 'website',
         ]);
+
+        try {
+            Mail::to('info@atherislimited.com')->send(new NewLeadNotification($lead));
+            Mail::to($lead->email)->send(new LeadConfirmation($lead));
+        } catch (\Exception $e) {
+            Log::error('Newsletter email failed: ' . $e->getMessage());
+        }
 
         if ($request->wantsJson()) {
             return response()->json(['success' => true, 'message' => 'Subscribed successfully!']);

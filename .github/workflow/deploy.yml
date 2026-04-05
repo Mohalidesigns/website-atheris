@@ -1,0 +1,59 @@
+# .github/workflows/deploy.yml
+
+name: Deploy to cPanel via SSH
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # --- Build React frontend ---
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install JS dependencies
+        run: npm ci
+
+      - name: Build frontend assets
+        run: npm run build
+
+      # --- SSH into server and deploy ---
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            cd ~/public_html
+
+            # Pull latest code
+            git pull origin main
+
+            # Install/update PHP dependencies
+            composer install --no-dev --optimize-autoloader
+
+            # Run DB migrations
+            php artisan migrate --force
+
+            # Clear and rebuild caches
+            php artisan config:cache
+            php artisan route:cache
+            php artisan view:cache
+            php artisan event:cache
+
+            # Restart queue workers if applicable
+            php artisan queue:restart
+
+            echo "✅ Deployment complete"
