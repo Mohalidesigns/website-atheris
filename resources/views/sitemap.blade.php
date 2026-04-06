@@ -20,6 +20,10 @@
     <url><loc>{{ url('/industries/microfinance') }}</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
     <url><loc>{{ url('/industries/insurance') }}</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
     <url><loc>{{ url('/industries/capital-markets') }}</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>{{ url('/software-solutions') }}</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>{{ url('/software-solutions/visitors-management') }}</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+    <url><loc>{{ url('/software-solutions/poultry-management') }}</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+    <url><loc>{{ url('/software-solutions/career-portal') }}</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
     <url><loc>{{ url('/legal/privacy') }}</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
     <url><loc>{{ url('/legal/terms') }}</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
     @foreach($solutions as $solution)

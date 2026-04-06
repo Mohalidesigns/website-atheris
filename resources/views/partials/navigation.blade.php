@@ -115,6 +115,54 @@
                     </div>
                 </div>
 
+                {{-- Products --}}
+                <div class="relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+                    <button class="px-4 py-2 text-sm font-medium text-text-primary hover:text-primary transition flex items-center gap-1">
+                        Products
+                        <svg class="w-4 h-4 transition-transform" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div x-show="open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" class="absolute left-0 top-full mt-1 w-80 bg-white rounded-xl shadow-2xl border border-border p-5 z-50">
+                        <div class="space-y-1">
+                            <a href="/software-solutions" class="flex items-start gap-3 p-3 rounded-lg hover:bg-bg transition group">
+                                <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition">
+                                    <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-sm text-text-primary">All Products</div>
+                                    <div class="text-xs text-text-secondary mt-0.5">Tailored software solutions</div>
+                                </div>
+                            </a>
+                            <a href="/software-solutions/visitors-management" class="flex items-start gap-3 p-3 rounded-lg hover:bg-bg transition group">
+                                <div class="w-10 h-10 rounded-lg bg-info/10 flex items-center justify-center shrink-0 group-hover:bg-info/20 transition">
+                                    <svg class="w-5 h-5 text-info" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-sm text-text-primary">Visitors Management</div>
+                                    <div class="text-xs text-text-secondary mt-0.5">Digital visitor tracking & security</div>
+                                </div>
+                            </a>
+                            <a href="/software-solutions/poultry-management" class="flex items-start gap-3 p-3 rounded-lg hover:bg-bg transition group">
+                                <div class="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center shrink-0 group-hover:bg-secondary/20 transition">
+                                    <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-sm text-text-primary">Poultry Management</div>
+                                    <div class="text-xs text-text-secondary mt-0.5">Farm operations & analytics</div>
+                                </div>
+                            </a>
+                            <a href="/software-solutions/career-portal" class="flex items-start gap-3 p-3 rounded-lg hover:bg-bg transition group">
+                                <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center shrink-0 group-hover:bg-accent/20 transition">
+                                    <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-sm text-text-primary">Career Portal</div>
+                                    <div class="text-xs text-text-secondary mt-0.5">Recruitment & applicant tracking</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
                 {{-- Resources --}}
                 <div class="relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
                     <button class="px-4 py-2 text-sm font-medium text-text-primary hover:text-primary transition flex items-center gap-1">
@@ -170,6 +218,14 @@
                     <a href="/solutions/incident-management" class="block py-2 text-sm text-text-secondary hover:text-primary">Incident Management</a>
                     <a href="/solutions/business-continuity" class="block py-2 text-sm text-text-secondary hover:text-primary">Business Continuity</a>
                     <a href="/solutions/esg-management" class="block py-2 text-sm text-text-secondary hover:text-primary">ESG Management</a>
+                </div>
+
+                <button @click="expanded = expanded === 'products' ? null : 'products'" class="w-full flex justify-between items-center py-3 text-sm font-semibold">Products <svg class="w-4 h-4 transition-transform" :class="{ 'rotate-180': expanded === 'products' }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+                <div x-show="expanded === 'products'" x-collapse class="pl-4 space-y-2 pb-3">
+                    <a href="/software-solutions" class="block py-2 text-sm text-text-secondary hover:text-primary">All Products</a>
+                    <a href="/software-solutions/visitors-management" class="block py-2 text-sm text-text-secondary hover:text-primary">Visitors Management</a>
+                    <a href="/software-solutions/poultry-management" class="block py-2 text-sm text-text-secondary hover:text-primary">Poultry Management</a>
+                    <a href="/software-solutions/career-portal" class="block py-2 text-sm text-text-secondary hover:text-primary">Career Portal</a>
                 </div>
 
                 <a href="/about" class="block py-3 text-sm font-semibold">About</a>

@@ -91,6 +91,26 @@ class PageController extends Controller
         return view('public.why-atheris.roi-calculator');
     }
 
+    public function softwareSolutions()
+    {
+        return view('public.software-solutions.index');
+    }
+
+    public function vms()
+    {
+        return view('public.software-solutions.vms');
+    }
+
+    public function poultryManagement()
+    {
+        return view('public.software-solutions.poultry');
+    }
+
+    public function careerPortal()
+    {
+        return view('public.software-solutions.career-portal');
+    }
+
     public function privacy()
     {
         return view('public.legal.privacy');

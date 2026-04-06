@@ -18,7 +18,7 @@
 
     {{-- Main Footer --}}
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8">
             {{-- Brand Column --}}
             <div class="col-span-2">
                 <a href="/" class="flex items-center gap-3 mb-6">
@@ -74,6 +74,17 @@
                     <li><a href="/solutions/incident-management" class="text-sm text-white/60 hover:text-accent transition">Incident Mgmt</a></li>
                     <li><a href="/solutions/business-continuity" class="text-sm text-white/60 hover:text-accent transition">Business Continuity</a></li>
                     <li><a href="/solutions/esg-management" class="text-sm text-white/60 hover:text-accent transition">ESG Management</a></li>
+                </ul>
+            </div>
+
+            {{-- Products --}}
+            <div>
+                <h4 class="font-semibold text-sm mb-4 text-white/90">Products</h4>
+                <ul class="space-y-3">
+                    <li><a href="/software-solutions/visitors-management" class="text-sm text-white/60 hover:text-accent transition">Visitors Management</a></li>
+                    <li><a href="/software-solutions/poultry-management" class="text-sm text-white/60 hover:text-accent transition">Poultry Management</a></li>
+                    <li><a href="/software-solutions/career-portal" class="text-sm text-white/60 hover:text-accent transition">Career Portal</a></li>
+                    <li><a href="/software-solutions" class="text-sm text-white/60 hover:text-accent transition">All Products</a></li>
                 </ul>
             </div>
 
