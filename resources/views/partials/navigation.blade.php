@@ -130,7 +130,6 @@
                     </div>
                 </div>
 
-                <a href="/pricing" class="px-4 py-2 text-sm font-medium text-text-primary hover:text-primary transition">Pricing</a>
                 <a href="/about" class="px-4 py-2 text-sm font-medium text-text-primary hover:text-primary transition">About</a>
             </div>
 
@@ -173,7 +172,6 @@
                     <a href="/solutions/esg-management" class="block py-2 text-sm text-text-secondary hover:text-primary">ESG Management</a>
                 </div>
 
-                <a href="/pricing" class="block py-3 text-sm font-semibold">Pricing</a>
                 <a href="/about" class="block py-3 text-sm font-semibold">About</a>
                 <a href="/resources/blog" class="block py-3 text-sm font-semibold">Blog</a>
             </div>

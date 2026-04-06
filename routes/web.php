@@ -34,7 +34,7 @@ Route::get('/resources/blog/{slug}', [BlogController::class, 'show'])->name('blo
 Route::get('/resources/blog/category/{slug}', [BlogController::class, 'category'])->name('blog.category');
 Route::get('/resources/whitepapers', fn() => view('public.resources.whitepapers'))->name('resources.whitepapers');
 Route::get('/resources/cbn-hub', fn() => view('public.resources.cbn-hub'))->name('resources.cbn');
-Route::get('/pricing', [PageController::class, 'pricing'])->name('pricing');
+// Route::get('/pricing', [PageController::class, 'pricing'])->name('pricing'); // Disabled
 Route::get('/demo', [PageController::class, 'demo'])->name('demo');
 Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/careers', [PageController::class, 'careers'])->name('careers');
