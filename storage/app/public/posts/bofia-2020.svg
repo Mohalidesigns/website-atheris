@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1A365D"/>
+      <stop offset="100%" stop-color="#0F2440"/>
+    </linearGradient>
+    <linearGradient id="accent1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#F0D060"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg1)"/>
+  <!-- Decorative circles -->
+  <circle cx="1050" cy="120" r="200" fill="#D4AF37" opacity="0.05"/>
+  <circle cx="1100" cy="180" r="150" fill="#2D7D46" opacity="0.05"/>
+  <circle cx="150" cy="550" r="180" fill="#D4AF37" opacity="0.04"/>
+  <!-- Grid pattern -->
+  <g opacity="0.03" stroke="#fff" stroke-width="1">
+    <line x1="0" y1="135" x2="1200" y2="135"/><line x1="0" y1="270" x2="1200" y2="270"/>
+    <line x1="0" y1="405" x2="1200" y2="405"/><line x1="0" y1="540" x2="1200" y2="540"/>
+    <line x1="240" y1="0" x2="240" y2="675"/><line x1="480" y1="0" x2="480" y2="675"/>
+    <line x1="720" y1="0" x2="720" y2="675"/><line x1="960" y1="0" x2="960" y2="675"/>
+  </g>
+  <!-- Document icon -->
+  <g transform="translate(80, 200)">
+    <rect x="0" y="0" width="120" height="160" rx="8" fill="none" stroke="#D4AF37" stroke-width="3" opacity="0.6"/>
+    <rect x="0" y="0" width="120" height="40" rx="8" fill="#D4AF37" opacity="0.15"/>
+    <line x1="25" y1="70" x2="95" y2="70" stroke="#fff" stroke-width="2" opacity="0.3"/>
+    <line x1="25" y1="95" x2="80" y2="95" stroke="#fff" stroke-width="2" opacity="0.3"/>
+    <line x1="25" y1="120" x2="90" y2="120" stroke="#fff" stroke-width="2" opacity="0.3"/>
+  </g>
+  <!-- Shield icon -->
+  <g transform="translate(850, 180)">
+    <path d="M60 10 L110 35 V75 C110 105 85 130 60 140 C35 130 10 105 10 75 V35 Z" fill="none" stroke="#D4AF37" stroke-width="3" opacity="0.4"/>
+    <path d="M40 75 L55 90 L85 55" fill="none" stroke="#2D7D46" stroke-width="4" stroke-linecap="round" opacity="0.6"/>
+  </g>
+  <!-- Category badge -->
+  <rect x="80" y="100" width="260" height="36" rx="18" fill="#D4AF37" opacity="0.15"/>
+  <text x="100" y="124" font-family="Arial, sans-serif" font-size="15" font-weight="600" fill="#D4AF37">CBN REGULATORY UPDATES</text>
+  <!-- Title -->
+  <text x="80" y="470" font-family="Arial, sans-serif" font-size="42" font-weight="800" fill="#FFFFFF">Understanding BOFIA 2020</text>
+  <text x="80" y="525" font-family="Arial, sans-serif" font-size="32" font-weight="400" fill="#FFFFFF" opacity="0.7">What Nigerian Banks Need to Know</text>
+  <!-- Bottom bar -->
+  <rect x="80" y="580" width="80" height="4" rx="2" fill="url(#accent1)"/>
+  <text x="80" y="620" font-family="Arial, sans-serif" font-size="14" fill="#FFFFFF" opacity="0.5">Atheris Limited  |  8 min read</text>
+</svg>

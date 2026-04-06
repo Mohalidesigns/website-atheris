@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1A365D"/>
+      <stop offset="100%" stop-color="#142E4E"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg3)"/>
+  <circle cx="1050" cy="150" r="220" fill="#D4AF37" opacity="0.04"/>
+  <circle cx="150" cy="550" r="200" fill="#2D7D46" opacity="0.04"/>
+  <!-- Grid -->
+  <g opacity="0.03" stroke="#fff" stroke-width="1">
+    <line x1="0" y1="135" x2="1200" y2="135"/><line x1="0" y1="270" x2="1200" y2="270"/>
+    <line x1="0" y1="405" x2="1200" y2="405"/><line x1="0" y1="540" x2="1200" y2="540"/>
+    <line x1="240" y1="0" x2="240" y2="675"/><line x1="480" y1="0" x2="480" y2="675"/>
+    <line x1="720" y1="0" x2="720" y2="675"/><line x1="960" y1="0" x2="960" y2="675"/>
+  </g>
+  <!-- Lock/Privacy icon -->
+  <g transform="translate(850, 160)">
+    <rect x="25" y="50" width="70" height="60" rx="8" fill="none" stroke="#D4AF37" stroke-width="3" opacity="0.5"/>
+    <path d="M35 50 V35 C35 15 85 15 85 35 V50" fill="none" stroke="#D4AF37" stroke-width="3" opacity="0.5"/>
+    <circle cx="60" cy="78" r="8" fill="#D4AF37" opacity="0.3"/>
+    <line x1="60" y1="86" x2="60" y2="98" stroke="#D4AF37" stroke-width="3" opacity="0.3"/>
+  </g>
+  <!-- Checklist icon -->
+  <g transform="translate(80, 200)">
+    <rect x="0" y="0" width="110" height="150" rx="8" fill="none" stroke="#D4AF37" stroke-width="2.5" opacity="0.4"/>
+    <path d="M20 35 L32 47 L55 20" fill="none" stroke="#2D7D46" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+    <line x1="65" y1="35" x2="95" y2="35" stroke="#fff" stroke-width="2" opacity="0.2"/>
+    <path d="M20 75 L32 87 L55 60" fill="none" stroke="#2D7D46" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+    <line x1="65" y1="75" x2="95" y2="75" stroke="#fff" stroke-width="2" opacity="0.2"/>
+    <rect x="20" y="105" width="15" height="15" rx="3" fill="none" stroke="#D4AF37" stroke-width="2" opacity="0.3"/>
+    <line x1="65" y1="112" x2="95" y2="112" stroke="#fff" stroke-width="2" opacity="0.2"/>
+  </g>
+  <!-- Category badge -->
+  <rect x="80" y="100" width="160" height="36" rx="18" fill="#D4AF37" opacity="0.15"/>
+  <text x="100" y="124" font-family="Arial, sans-serif" font-size="15" font-weight="600" fill="#D4AF37">COMPLIANCE</text>
+  <!-- Title -->
+  <text x="80" y="460" font-family="Arial, sans-serif" font-size="44" font-weight="800" fill="#FFFFFF">NDPA 2023</text>
+  <text x="80" y="515" font-family="Arial, sans-serif" font-size="36" font-weight="800" fill="#FFFFFF">Compliance Checklist</text>
+  <text x="80" y="558" font-family="Arial, sans-serif" font-size="24" font-weight="400" fill="#FFFFFF" opacity="0.7">For Nigerian Financial Institutions</text>
+  <!-- Bottom bar -->
+  <rect x="80" y="590" width="80" height="4" rx="2" fill="#D4AF37"/>
+  <text x="80" y="630" font-family="Arial, sans-serif" font-size="14" fill="#FFFFFF" opacity="0.5">Atheris Limited  |  10 min read</text>
+</svg>
