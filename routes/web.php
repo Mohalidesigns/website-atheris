@@ -35,6 +35,7 @@ Route::get('/resources/blog/category/{slug}', [BlogController::class, 'category'
 Route::get('/resources/whitepapers', fn() => view('public.resources.whitepapers'))->name('resources.whitepapers');
 Route::get('/resources/cbn-hub', fn() => view('public.resources.cbn-hub'))->name('resources.cbn');
 // Route::get('/pricing', [PageController::class, 'pricing'])->name('pricing'); // Disabled
+
 Route::get('/software-solutions', [PageController::class, 'softwareSolutions'])->name('software-solutions');
 Route::get('/software-solutions/visitors-management', [PageController::class, 'vms'])->name('software-solutions.vms');
 Route::get('/software-solutions/poultry-management', [PageController::class, 'poultryManagement'])->name('software-solutions.poultry');

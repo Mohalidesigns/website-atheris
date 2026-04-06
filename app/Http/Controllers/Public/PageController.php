@@ -98,12 +98,12 @@ class PageController extends Controller
 
     public function vms()
     {
-        return view('public.software-solutions.vms');
+        return view('public.software-solutions.visitors-management');
     }
 
     public function poultryManagement()
     {
-        return view('public.software-solutions.poultry');
+        return view('public.software-solutions.poultry-management');
     }
 
     public function careerPortal()

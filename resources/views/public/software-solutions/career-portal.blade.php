@@ -17,14 +17,17 @@
                 </div>
                 <div class="hidden lg:block">
                     <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/10">
-                        {{-- Placeholder 1: Career Portal Dashboard --}}
-                        <div class="bg-white/5 rounded-xl aspect-[4/3] flex items-center justify-center text-white/20 border border-dashed border-white/10">
-                            <div class="text-center">
-                                <svg class="w-16 h-16 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                                <p class="text-sm font-medium">Career Portal Dashboard</p>
-                                <p class="text-xs mt-1">1200 x 900px</p>
+                        @if(file_exists(public_path('images/products/career-portal-home.png')))
+                            <img src="{{ asset('images/products/career-portal-home.png') }}" alt="Career Portal Homepage" class="rounded-xl w-full aspect-[4/3] object-cover object-top">
+                        @else
+                            <div class="bg-white/5 rounded-xl aspect-[4/3] flex items-center justify-center text-white/20 border border-dashed border-white/10">
+                                <div class="text-center">
+                                    <svg class="w-16 h-16 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                                    <p class="text-sm font-medium">Career Portal Homepage</p>
+                                    <p class="text-xs mt-1">Upload: images/products/career-portal-home.png</p>
+                                </div>
                             </div>
-                        </div>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -91,28 +94,48 @@
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-text-primary mb-4">Built for HR Teams That Move Fast</h2>
             </div>
-            <div class="grid md:grid-cols-2 gap-8">
-                {{-- Placeholder 2: Applicant Pipeline --}}
-                <div class="bg-bg rounded-2xl p-6 border border-border">
-                    <div class="bg-white rounded-xl aspect-[4/3] flex items-center justify-center text-text-secondary/30 border border-dashed border-border">
-                        <div class="text-center">
-                            <svg class="w-14 h-14 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                            <p class="text-sm font-medium">Applicant Pipeline View</p>
-                            <p class="text-xs mt-1">1200 x 900px</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                {{-- Screenshot 1: Job Listings --}}
+                <div class="bg-bg rounded-2xl p-4 border border-border">
+                    @if(file_exists(public_path('images/products/career-portal-jobs.png')))
+                        <img src="{{ asset('images/products/career-portal-jobs.png') }}" alt="Job Listings" class="rounded-xl w-full object-cover object-top border border-border">
+                    @else
+                        <div class="bg-white rounded-xl aspect-[4/3] flex items-center justify-center text-text-secondary/30 border border-dashed border-border">
+                            <div class="text-center">
+                                <svg class="w-14 h-14 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                                <p class="text-xs font-medium">Upload: career-portal-jobs.png</p>
+                            </div>
                         </div>
-                    </div>
-                    <p class="text-sm text-text-secondary mt-4 text-center">Kanban-style pipeline with drag-and-drop candidate management</p>
+                    @endif
+                    <p class="text-sm text-text-secondary mt-3 text-center font-medium">Browse open positions with search, filters, and salary transparency</p>
                 </div>
-                {{-- Placeholder 3: Branded Career Page --}}
-                <div class="bg-bg rounded-2xl p-6 border border-border">
-                    <div class="bg-white rounded-xl aspect-[4/3] flex items-center justify-center text-text-secondary/30 border border-dashed border-border">
-                        <div class="text-center">
-                            <svg class="w-14 h-14 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9"/></svg>
-                            <p class="text-sm font-medium">Branded Career Page</p>
-                            <p class="text-xs mt-1">1200 x 900px</p>
+                {{-- Screenshot 2: Job Detail --}}
+                <div class="bg-bg rounded-2xl p-4 border border-border">
+                    @if(file_exists(public_path('images/products/career-portal-detail.png')))
+                        <img src="{{ asset('images/products/career-portal-detail.png') }}" alt="Job Detail Page" class="rounded-xl w-full object-cover object-top border border-border">
+                    @else
+                        <div class="bg-white rounded-xl aspect-[4/3] flex items-center justify-center text-text-secondary/30 border border-dashed border-border">
+                            <div class="text-center">
+                                <svg class="w-14 h-14 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                                <p class="text-xs font-medium">Upload: career-portal-detail.png</p>
+                            </div>
                         </div>
-                    </div>
-                    <p class="text-sm text-text-secondary mt-4 text-center">Public-facing career page with your brand, culture, and open roles</p>
+                    @endif
+                    <p class="text-sm text-text-secondary mt-3 text-center font-medium">Detailed job pages with requirements, benefits, and one-click apply</p>
+                </div>
+                {{-- Screenshot 3: Homepage --}}
+                <div class="bg-bg rounded-2xl p-4 border border-border">
+                    @if(file_exists(public_path('images/products/career-portal-home.png')))
+                        <img src="{{ asset('images/products/career-portal-home.png') }}" alt="Career Portal Homepage" class="rounded-xl w-full object-cover object-top border border-border">
+                    @else
+                        <div class="bg-white rounded-xl aspect-[4/3] flex items-center justify-center text-text-secondary/30 border border-dashed border-border">
+                            <div class="text-center">
+                                <svg class="w-14 h-14 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9"/></svg>
+                                <p class="text-xs font-medium">Upload: career-portal-home.png</p>
+                            </div>
+                        </div>
+                    @endif
+                    <p class="text-sm text-text-secondary mt-3 text-center font-medium">Branded homepage with featured positions and category browsing</p>
                 </div>
             </div>
         </div>
