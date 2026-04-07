@@ -17,14 +17,17 @@
                 </div>
                 <div class="hidden lg:block">
                     <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/10">
-                        {{-- Placeholder 1: PMS Dashboard --}}
-                        <div class="bg-white/5 rounded-xl aspect-[4/3] flex items-center justify-center text-white/20 border border-dashed border-white/10">
-                            <div class="text-center">
-                                <svg class="w-16 h-16 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                                <p class="text-sm font-medium">Farm Dashboard</p>
-                                <p class="text-xs mt-1">1200 x 900px</p>
+                        @if($product && $product->hero_image)
+                            <img src="{{ asset('storage/' . $product->hero_image) }}" alt="Farm Dashboard" class="rounded-xl w-full aspect-[4/3] object-cover object-top">
+                        @else
+                            <div class="bg-white/5 rounded-xl aspect-[4/3] flex items-center justify-center text-white/20 border border-dashed border-white/10">
+                                <div class="text-center">
+                                    <svg class="w-16 h-16 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                                    <p class="text-sm font-medium">Farm Dashboard</p>
+                                    <p class="text-xs mt-1">1200 x 900px</p>
+                                </div>
                             </div>
-                        </div>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -89,27 +92,35 @@
                 <p class="text-lg text-text-secondary">No farming software experience required. If you can use WhatsApp, you can use Atheris PMS.</p>
             </div>
             <div class="grid md:grid-cols-2 gap-8">
-                {{-- Placeholder 2: Flock Records --}}
+                {{-- Screenshot 1 --}}
                 <div class="bg-bg rounded-2xl p-6 border border-border">
-                    <div class="bg-white rounded-xl aspect-[4/3] flex items-center justify-center text-text-secondary/30 border border-dashed border-border">
-                        <div class="text-center">
-                            <svg class="w-14 h-14 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                            <p class="text-sm font-medium">Flock Records Screen</p>
-                            <p class="text-xs mt-1">1200 x 900px</p>
+                    @if($product && $product->screenshot_1)
+                        <img src="{{ asset('storage/' . $product->screenshot_1) }}" alt="{{ $product->screenshot_1_caption ?? 'Flock Records Screen' }}" class="rounded-xl w-full aspect-[4/3] object-cover object-top border border-border">
+                    @else
+                        <div class="bg-white rounded-xl aspect-[4/3] flex items-center justify-center text-text-secondary/30 border border-dashed border-border">
+                            <div class="text-center">
+                                <svg class="w-14 h-14 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                                <p class="text-sm font-medium">Flock Records Screen</p>
+                                <p class="text-xs mt-1">1200 x 900px</p>
+                            </div>
                         </div>
-                    </div>
-                    <p class="text-sm text-text-secondary mt-4 text-center">Daily flock management with mortality tracking</p>
+                    @endif
+                    <p class="text-sm text-text-secondary mt-4 text-center">{{ $product->screenshot_1_caption ?? 'Daily flock management with mortality tracking' }}</p>
                 </div>
-                {{-- Placeholder 3: Financial Report --}}
+                {{-- Screenshot 2 --}}
                 <div class="bg-bg rounded-2xl p-6 border border-border">
-                    <div class="bg-white rounded-xl aspect-[4/3] flex items-center justify-center text-text-secondary/30 border border-dashed border-border">
-                        <div class="text-center">
-                            <svg class="w-14 h-14 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
-                            <p class="text-sm font-medium">Financial Analytics</p>
-                            <p class="text-xs mt-1">1200 x 900px</p>
+                    @if($product && $product->screenshot_2)
+                        <img src="{{ asset('storage/' . $product->screenshot_2) }}" alt="{{ $product->screenshot_2_caption ?? 'Financial Analytics' }}" class="rounded-xl w-full aspect-[4/3] object-cover object-top border border-border">
+                    @else
+                        <div class="bg-white rounded-xl aspect-[4/3] flex items-center justify-center text-text-secondary/30 border border-dashed border-border">
+                            <div class="text-center">
+                                <svg class="w-14 h-14 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                                <p class="text-sm font-medium">Financial Analytics</p>
+                                <p class="text-xs mt-1">1200 x 900px</p>
+                            </div>
                         </div>
-                    </div>
-                    <p class="text-sm text-text-secondary mt-4 text-center">Batch profitability and cost analysis dashboard</p>
+                    @endif
+                    <p class="text-sm text-text-secondary mt-4 text-center">{{ $product->screenshot_2_caption ?? 'Batch profitability and cost analysis dashboard' }}</p>
                 </div>
             </div>
         </div>

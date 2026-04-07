@@ -11,6 +11,7 @@ use App\Models\Faq;
 use App\Models\Post;
 use App\Models\Customer;
 use App\Models\Resource;
+use App\Models\Product;
 
 class PageController extends Controller
 {
@@ -98,17 +99,20 @@ class PageController extends Controller
 
     public function vms()
     {
-        return view('public.software-solutions.visitors-management');
+        $product = Product::where('slug', 'visitors-management-system')->orWhere('slug', 'visitors-management')->first();
+        return view('public.software-solutions.visitors-management', compact('product'));
     }
 
     public function poultryManagement()
     {
-        return view('public.software-solutions.poultry-management');
+        $product = Product::where('slug', 'poultry-management-system')->orWhere('slug', 'poultry-management')->first();
+        return view('public.software-solutions.poultry-management', compact('product'));
     }
 
     public function careerPortal()
     {
-        return view('public.software-solutions.career-portal');
+        $product = Product::where('slug', 'career-portal')->first();
+        return view('public.software-solutions.career-portal', compact('product'));
     }
 
     public function privacy()

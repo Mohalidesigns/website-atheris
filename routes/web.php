@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\MediaController;
 use App\Http\Controllers\Admin\PartnerController;
 use App\Http\Controllers\Admin\PageSettingsController;
+use App\Http\Controllers\Admin\ProductController;
 
 // Public Routes
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -84,4 +85,7 @@ Route::prefix('admin')->middleware('auth')->name('admin.')->group(function () {
     Route::put('/pages/hero-slides', [PageSettingsController::class, 'updateHeroSlides'])->name('pages.hero-slides.update');
     Route::get('/pages/{group}/edit', [PageSettingsController::class, 'edit'])->name('pages.edit');
     Route::put('/pages/{group}', [PageSettingsController::class, 'update'])->name('pages.update');
+
+    // Products (Software Solutions)
+    Route::resource('products', ProductController::class)->except(['show']);
 });
