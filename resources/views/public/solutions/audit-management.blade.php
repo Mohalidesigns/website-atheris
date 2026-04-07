@@ -37,71 +37,71 @@
     </section>
 
     {{-- Stats Bar --}}
-    <section class="py-8 bg-primary border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div>
-                    <div class="text-3xl md:text-4xl font-extrabold text-accent mb-1">70%</div>
-                    <div class="text-sm text-white/60">Report writing time reduction</div>
+    <section class="py-14 lg:py-16 bg-primary border-b border-white/10">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-10 lg:gap-16 text-center">
+                <div class="py-2">
+                    <div class="text-3xl md:text-5xl font-extrabold text-accent mb-2">70%</div>
+                    <div class="text-sm text-white/60 leading-snug">Report writing time<br>reduction</div>
                 </div>
-                <div>
-                    <div class="text-3xl md:text-4xl font-extrabold text-accent mb-1">128+</div>
-                    <div class="text-sm text-white/60">Data models powering audits</div>
+                <div class="py-2">
+                    <div class="text-3xl md:text-5xl font-extrabold text-accent mb-2">128+</div>
+                    <div class="text-sm text-white/60 leading-snug">Data models<br>powering audits</div>
                 </div>
-                <div>
-                    <div class="text-3xl md:text-4xl font-extrabold text-accent mb-1">10+</div>
-                    <div class="text-sm text-white/60">Compliance frameworks</div>
+                <div class="py-2">
+                    <div class="text-3xl md:text-5xl font-extrabold text-accent mb-2">10+</div>
+                    <div class="text-sm text-white/60 leading-snug">Compliance<br>frameworks</div>
                 </div>
-                <div>
-                    <div class="text-3xl md:text-4xl font-extrabold text-accent mb-1">100%</div>
-                    <div class="text-sm text-white/60">Digital audit trail</div>
+                <div class="py-2">
+                    <div class="text-3xl md:text-5xl font-extrabold text-accent mb-2">100%</div>
+                    <div class="text-sm text-white/60 leading-snug">Digital<br>audit trail</div>
                 </div>
             </div>
         </div>
     </section>
 
     {{-- The Challenge --}}
-    <section class="py-20 bg-bg">
+    <section class="py-24 lg:py-28 bg-bg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-14">
-                <span class="inline-block bg-error/10 text-error text-sm font-semibold px-4 py-1.5 rounded-full mb-4">The Challenge</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-4">Traditional Internal Auditing Is Broken</h2>
-                <p class="text-text-secondary text-lg leading-relaxed">Internal audit teams at financial institutions face mounting pressure — expanding regulatory requirements, manual processes, fragmented tools, and a constant demand for speed without sacrificing quality.</p>
+            <div class="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
+                <span class="inline-block bg-error/10 text-error text-sm font-semibold px-5 py-2 rounded-full mb-6">The Challenge</span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-text-primary mb-6">Traditional Internal Auditing Is Broken</h2>
+                <p class="text-text-secondary text-lg lg:text-xl leading-relaxed">Internal audit teams at financial institutions face mounting pressure — expanding regulatory requirements, manual processes, fragmented tools, and a constant demand for speed without sacrificing quality.</p>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-white rounded-2xl p-8 border border-border shadow-sm hover:shadow-md transition">
-                    <div class="w-12 h-12 bg-error/10 rounded-xl flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-error" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                <div class="bg-white rounded-2xl p-8 lg:p-10 border border-border shadow-sm hover:shadow-lg transition-all">
+                    <div class="w-14 h-14 bg-error/10 rounded-2xl flex items-center justify-center mb-8">
+                        <svg class="w-7 h-7 text-error" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                     </div>
-                    <h3 class="text-lg font-bold text-text-primary mb-3">Spreadsheets Get Lost</h3>
-                    <p class="text-sm text-text-secondary leading-relaxed">Paper-based audit programs lead to inconsistencies, version conflicts, and CBN examination failures.</p>
+                    <h3 class="text-xl font-bold text-text-primary mb-4">Spreadsheets Get Lost</h3>
+                    <p class="text-text-secondary leading-relaxed">Paper-based audit programs lead to inconsistencies, version conflicts, and CBN examination failures.</p>
                 </div>
-                <div class="bg-white rounded-2xl p-8 border border-border shadow-sm hover:shadow-md transition">
-                    <div class="w-12 h-12 bg-error/10 rounded-xl flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-error" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+                <div class="bg-white rounded-2xl p-8 lg:p-10 border border-border shadow-sm hover:shadow-lg transition-all">
+                    <div class="w-14 h-14 bg-error/10 rounded-2xl flex items-center justify-center mb-8">
+                        <svg class="w-7 h-7 text-error" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
                     </div>
-                    <h3 class="text-lg font-bold text-text-primary mb-3">Findings Lack Traceability</h3>
-                    <p class="text-sm text-text-secondary leading-relaxed">Without a connected platform, audit observations cannot be traced from finding back to evidence, procedure, and report.</p>
+                    <h3 class="text-xl font-bold text-text-primary mb-4">Findings Lack Traceability</h3>
+                    <p class="text-text-secondary leading-relaxed">Without a connected platform, audit observations cannot be traced from finding back to evidence, procedure, and report.</p>
                 </div>
-                <div class="bg-white rounded-2xl p-8 border border-border shadow-sm hover:shadow-md transition">
-                    <div class="w-12 h-12 bg-error/10 rounded-xl flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-error" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <div class="bg-white rounded-2xl p-8 lg:p-10 border border-border shadow-sm hover:shadow-lg transition-all">
+                    <div class="w-14 h-14 bg-error/10 rounded-2xl flex items-center justify-center mb-8">
+                        <svg class="w-7 h-7 text-error" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                     </div>
-                    <h3 class="text-lg font-bold text-text-primary mb-3">Reports Take Weeks</h3>
-                    <p class="text-sm text-text-secondary leading-relaxed">Manual report compilation means boards are always waiting. Audit cycle times drag on, delaying critical risk decisions.</p>
+                    <h3 class="text-xl font-bold text-text-primary mb-4">Reports Take Weeks</h3>
+                    <p class="text-text-secondary leading-relaxed">Manual report compilation means boards are always waiting. Audit cycle times drag on, delaying critical risk decisions.</p>
                 </div>
-                <div class="bg-white rounded-2xl p-8 border border-border shadow-sm hover:shadow-md transition">
-                    <div class="w-12 h-12 bg-error/10 rounded-xl flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-error" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.542 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21"/></svg>
+                <div class="bg-white rounded-2xl p-8 lg:p-10 border border-border shadow-sm hover:shadow-lg transition-all">
+                    <div class="w-14 h-14 bg-error/10 rounded-2xl flex items-center justify-center mb-8">
+                        <svg class="w-7 h-7 text-error" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.542 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21"/></svg>
                     </div>
-                    <h3 class="text-lg font-bold text-text-primary mb-3">Boards Demand Answers</h3>
-                    <p class="text-sm text-text-secondary leading-relaxed">Boards and regulators need real-time visibility into audit status, open findings, and remediation progress — yesterday.</p>
+                    <h3 class="text-xl font-bold text-text-primary mb-4">Boards Demand Answers</h3>
+                    <p class="text-text-secondary leading-relaxed">Boards and regulators need real-time visibility into audit status, open findings, and remediation progress — yesterday.</p>
                 </div>
             </div>
 
             {{-- Solution Transition --}}
-            <div class="mt-16 text-center">
-                <div class="inline-flex items-center gap-3 bg-secondary/10 text-secondary px-6 py-3 rounded-full font-semibold">
+            <div class="mt-20 text-center">
+                <div class="inline-flex items-center gap-3 bg-secondary/10 text-secondary px-8 py-4 rounded-full font-semibold text-lg">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
                     ThirdLine was built to solve this
                 </div>
@@ -110,21 +110,21 @@
     </section>
 
     {{-- Why ThirdLine - 6 Selling Points --}}
-    <section id="why-thirdline" class="py-20 bg-white">
+    <section id="why-thirdline" class="py-24 lg:py-28 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-14">
-                <span class="inline-block bg-primary/5 text-primary text-sm font-semibold px-4 py-1.5 rounded-full mb-4">Why ThirdLine?</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-4">Six Reasons Audit Teams Choose ThirdLine</h2>
-                <p class="text-text-secondary text-lg">A purpose-built, end-to-end Internal Audit Solution that transforms how your audit team plans, executes, reports, and follows up.</p>
+            <div class="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
+                <span class="inline-block bg-primary/5 text-primary text-sm font-semibold px-5 py-2 rounded-full mb-6">Why ThirdLine?</span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-text-primary mb-6">Six Reasons Audit Teams Choose ThirdLine</h2>
+                <p class="text-text-secondary text-lg lg:text-xl leading-relaxed">A purpose-built, end-to-end Internal Audit Solution that transforms how your audit team plans, executes, reports, and follows up.</p>
             </div>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
                 @foreach($pc['selling_points'] ?? [] as $sp)
-                <div class="bg-bg rounded-2xl p-8 border border-border hover:border-accent/30 hover:shadow-lg transition-all group">
-                    <div class="w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-accent/20 transition">
+                <div class="bg-bg rounded-2xl p-8 lg:p-10 border border-border hover:border-accent/30 hover:shadow-lg transition-all group">
+                    <div class="w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-accent/20 transition">
                         <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                     </div>
-                    <h3 class="text-xl font-bold text-text-primary mb-3">{{ $sp['title'] }}</h3>
-                    <p class="text-sm text-text-secondary leading-relaxed">{{ $sp['desc'] }}</p>
+                    <h3 class="text-xl font-bold text-text-primary mb-4">{{ $sp['title'] }}</h3>
+                    <p class="text-text-secondary leading-relaxed">{{ $sp['desc'] }}</p>
                 </div>
                 @endforeach
             </div>
@@ -132,21 +132,21 @@
     </section>
 
     {{-- Complete Audit Lifecycle --}}
-    <section class="py-20 bg-bg">
+    <section class="py-24 lg:py-28 bg-bg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-14">
-                <span class="inline-block bg-secondary/10 text-secondary text-sm font-semibold px-4 py-1.5 rounded-full mb-4">Complete Lifecycle</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-4">One Platform. Full Audit Lifecycle.</h2>
-                <p class="text-text-secondary text-lg">Every phase is connected, every handoff is tracked, and every approval is recorded — from annual planning through to follow-up validation.</p>
+            <div class="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
+                <span class="inline-block bg-secondary/10 text-secondary text-sm font-semibold px-5 py-2 rounded-full mb-6">Complete Lifecycle</span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-text-primary mb-6">One Platform. Full Audit Lifecycle.</h2>
+                <p class="text-text-secondary text-lg lg:text-xl leading-relaxed">Every phase is connected, every handoff is tracked, and every approval is recorded — from annual planning through to follow-up validation.</p>
             </div>
 
             {{-- Lifecycle Flow --}}
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16">
                 @foreach($pc['lifecycle_phases'] ?? [] as $phase)
-                <div class="bg-white rounded-2xl p-6 border border-border shadow-sm">
-                    <div class="w-10 h-10 bg-primary text-white rounded-xl flex items-center justify-center text-sm font-bold shadow-md mb-4">{{ $phase['step'] }}</div>
-                    <h3 class="text-lg font-bold text-text-primary mb-2">{{ $phase['title'] }}</h3>
-                    <p class="text-sm text-text-secondary leading-relaxed">{{ $phase['desc'] }}</p>
+                <div class="bg-white rounded-2xl p-8 border border-border shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-primary text-white rounded-xl flex items-center justify-center text-sm font-bold shadow-md mb-6">{{ $phase['step'] }}</div>
+                    <h3 class="text-lg font-bold text-text-primary mb-3">{{ $phase['title'] }}</h3>
+                    <p class="text-text-secondary leading-relaxed">{{ $phase['desc'] }}</p>
                 </div>
                 @endforeach
             </div>
@@ -154,9 +154,9 @@
     </section>
 
     {{-- Work Programs & Fieldwork with Screenshot --}}
-    <section class="py-20 bg-white">
+    <section class="py-24 lg:py-28 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div>
                     <span class="inline-block bg-primary/5 text-primary text-sm font-semibold px-4 py-1.5 rounded-full mb-4">Work Programs & Fieldwork</span>
                     <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-6">Structured Fieldwork, Accelerated Execution</h2>
@@ -197,11 +197,11 @@
     </section>
 
     {{-- Findings & Issues Management --}}
-    <section class="py-20 bg-bg">
+    <section class="py-24 lg:py-28 bg-bg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-14">
-                <span class="inline-block bg-primary/5 text-primary text-sm font-semibold px-4 py-1.5 rounded-full mb-4">Findings Management</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-4">Every Finding Documented, Rated, and Tracked</h2>
+            <div class="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
+                <span class="inline-block bg-primary/5 text-primary text-sm font-semibold px-5 py-2 rounded-full mb-6">Findings Management</span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-text-primary mb-6">Every Finding Documented, Rated, and Tracked</h2>
                 <p class="text-text-secondary text-lg">Rigorous yet intuitive findings management using the internationally recognised 5 Cs format: Criteria, Condition, Cause, Consequence, and Corrective Action.</p>
             </div>
 
@@ -263,12 +263,12 @@
     </section>
 
     {{-- AI-Powered Intelligence --}}
-    <section class="py-20 bg-gradient-hero">
+    <section class="py-24 lg:py-28 bg-gradient-hero">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-14">
-                <span class="inline-block bg-accent/20 text-accent text-sm font-semibold px-4 py-1.5 rounded-full mb-4">AI-Powered Intelligence</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">AI That Works Alongside Your Auditors</h2>
-                <p class="text-white/60 text-lg">Not a gimmick — a practical accelerator that saves hours on every engagement. Report writing time reduced by up to 70%, with auditors retaining full control.</p>
+            <div class="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
+                <span class="inline-block bg-accent/20 text-accent text-sm font-semibold px-5 py-2 rounded-full mb-6">AI-Powered Intelligence</span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">AI That Works Alongside Your Auditors</h2>
+                <p class="text-white/60 text-lg lg:text-xl leading-relaxed">Not a gimmick — a practical accelerator that saves hours on every engagement. Report writing time reduced by up to 70%, with auditors retaining full control.</p>
             </div>
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 @foreach($pc['ai_capabilities'] ?? [] as $ai)
@@ -285,9 +285,9 @@
     </section>
 
     {{-- Risk Management with Screenshot --}}
-    <section class="py-20 bg-white">
+    <section class="py-24 lg:py-28 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div class="order-2 lg:order-1">
                     <div class="bg-bg rounded-2xl p-3 border border-border shadow-lg">
                         <img src="{{ !empty($ss['risk']) ? asset('storage/' . $ss['risk']) : asset('images/Risk Register.png') }}" alt="Risk Register & Enterprise Visibility" class="rounded-xl w-full cursor-pointer" @click="$dispatch('open-lightbox', { src: $el.src, alt: $el.alt })">
@@ -317,9 +317,9 @@
     </section>
 
     {{-- Regulatory Compliance Frameworks --}}
-    <section class="py-20 bg-bg">
+    <section class="py-24 lg:py-28 bg-bg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div>
                     <span class="inline-block bg-primary/5 text-primary text-sm font-semibold px-4 py-1.5 rounded-full mb-4">Regulatory Compliance</span>
                     <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-6">10+ Pre-Built Compliance Frameworks — Ready on Day One</h2>
@@ -349,12 +349,12 @@
     </section>
 
     {{-- Reporting & Board Governance --}}
-    <section class="py-20 bg-white">
+    <section class="py-24 lg:py-28 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-14">
-                <span class="inline-block bg-accent/10 text-accent text-sm font-semibold px-4 py-1.5 rounded-full mb-4">Reporting & Governance</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-4">Board-Ready Reports. Committee-Grade Governance.</h2>
-                <p class="text-text-secondary text-lg">Multi-stage approval workflow ensures every report passes through rigorous quality gates before reaching the Audit Committee and Board.</p>
+            <div class="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
+                <span class="inline-block bg-accent/10 text-accent text-sm font-semibold px-5 py-2 rounded-full mb-6">Reporting & Governance</span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-text-primary mb-6">Board-Ready Reports. Committee-Grade Governance.</h2>
+                <p class="text-text-secondary text-lg lg:text-xl leading-relaxed">Multi-stage approval workflow ensures every report passes through rigorous quality gates before reaching the Audit Committee and Board.</p>
             </div>
 
             {{-- Report Approval Flow --}}
@@ -390,17 +390,17 @@
     </section>
 
     {{-- Security & Roles --}}
-    <section class="py-20 bg-bg">
+    <section class="py-24 lg:py-28 bg-bg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-14">
-                <span class="inline-block bg-primary/5 text-primary text-sm font-semibold px-4 py-1.5 rounded-full mb-4">Security & Administration</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-4">Enterprise-Grade Security & Control</h2>
-                <p class="text-text-secondary text-lg">Role-based access control with granular permissions, immutable audit logs, and digital signatures — the non-repudiation guarantee regulators demand.</p>
+            <div class="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
+                <span class="inline-block bg-primary/5 text-primary text-sm font-semibold px-5 py-2 rounded-full mb-6">Security & Administration</span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-text-primary mb-6">Enterprise-Grade Security & Control</h2>
+                <p class="text-text-secondary text-lg lg:text-xl leading-relaxed">Role-based access control with granular permissions, immutable audit logs, and digital signatures — the non-repudiation guarantee regulators demand.</p>
             </div>
 
-            <div class="grid lg:grid-cols-2 gap-8">
+            <div class="grid lg:grid-cols-2 gap-8 lg:gap-10">
                 {{-- Role Hierarchy --}}
-                <div class="bg-white rounded-2xl p-8 border border-border">
+                <div class="bg-white rounded-2xl p-8 lg:p-10 border border-border">
                     <h3 class="text-lg font-bold text-text-primary mb-6">Role Hierarchy</h3>
                     <div class="space-y-4">
                         @foreach($pc['role_hierarchy'] ?? [] as $role)
@@ -416,7 +416,7 @@
                 </div>
 
                 {{-- Security Features --}}
-                <div class="bg-white rounded-2xl p-8 border border-border">
+                <div class="bg-white rounded-2xl p-8 lg:p-10 border border-border">
                     <h3 class="text-lg font-bold text-text-primary mb-6">Security Features</h3>
                     <div class="grid grid-cols-1 gap-4">
                         @foreach($pc['security_features'] ?? [] as $feature)
@@ -432,11 +432,11 @@
     </section>
 
     {{-- At a Glance --}}
-    <section class="py-20 bg-gradient-hero">
+    <section class="py-24 lg:py-28 bg-gradient-hero">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-14">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">ThirdLine at a Glance</h2>
-                <p class="text-xl text-accent font-semibold">One platform. Complete audit lifecycle. Zero blind spots.</p>
+            <div class="text-center mb-16 lg:mb-20">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">ThirdLine at a Glance</h2>
+                <p class="text-xl lg:text-2xl text-accent font-semibold">One platform. Complete audit lifecycle. Zero blind spots.</p>
             </div>
             <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
                 @foreach($pc['glance_stats'] ?? [] as $stat)
@@ -450,9 +450,9 @@
     </section>
 
     {{-- Other Solutions --}}
-    <section class="py-20 bg-white">
+    <section class="py-24 lg:py-28 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-2xl font-bold text-text-primary mb-8 text-center">Explore Other Modules</h2>
+            <h2 class="text-2xl lg:text-3xl font-bold text-text-primary mb-12 text-center">Explore Other Modules</h2>
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 @foreach($otherSolutions->take(3) as $other)
                 <a href="/solutions/{{ $other->slug }}" class="group bg-bg rounded-xl p-6 border border-border hover:border-primary/20 hover:shadow-md transition-all">
@@ -465,13 +465,13 @@
     </section>
 
     {{-- CTA --}}
-    <section class="py-20 bg-bg border-t border-border">
+    <section class="py-24 lg:py-28 bg-bg border-t border-border">
         <div class="max-w-3xl mx-auto px-4 text-center">
-            <div class="mb-6">
-                <img src="{{ asset('images/thridLine-presentation.png') }}" alt="ThirdLine" class="h-8 object-contain mx-auto">
+            <div class="mb-8">
+                <img src="{{ asset('images/thridLine-presentation.png') }}" alt="ThirdLine" class="h-10 object-contain mx-auto">
             </div>
-            <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-4">Ready to Transform Your Internal Audit Function?</h2>
-            <p class="text-text-secondary text-lg mb-8">Whether you're navigating complex regulatory requirements or modernising audit operations, ThirdLine gives your team the tools, intelligence, and confidence to deliver world-class internal audit — faster, smarter, and with full accountability.</p>
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-text-primary mb-6">Ready to Transform Your Internal Audit Function?</h2>
+            <p class="text-text-secondary text-lg lg:text-xl mb-10 leading-relaxed">Whether you're navigating complex regulatory requirements or modernising audit operations, ThirdLine gives your team the tools, intelligence, and confidence to deliver world-class internal audit — faster, smarter, and with full accountability.</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="/demo" class="inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent-light text-white font-bold px-8 py-4 rounded-xl transition-all shadow-lg">
                     Request a Demo
