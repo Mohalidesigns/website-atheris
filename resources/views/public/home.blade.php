@@ -158,6 +158,19 @@
                     </span>
                 </a>
                 @endforeach
+
+                {{-- Third Party Risk (standalone page, not in solutions table) --}}
+                <a href="/platform/third-party-risk" class="group bg-white rounded-2xl p-8 border border-border hover:border-accent/30 card-hover" x-intersect="$el.classList.add('animate-scale-in')" style="animation-delay: {{ count($solutions) * 100 }}ms">
+                    <div class="w-14 h-14 rounded-xl bg-primary/5 group-hover:bg-accent/10 flex items-center justify-center mb-6 transition-colors">
+                        <svg class="w-7 h-7 text-primary group-hover:text-accent transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-text-primary mb-3 group-hover:text-primary transition-colors">Third Party Risk Management</h3>
+                    <p class="text-text-secondary text-sm leading-relaxed mb-4">Assess, monitor, and manage vendor and third-party risks across your supply chain with automated due diligence and continuous monitoring.</p>
+                    <span class="inline-flex items-center text-sm font-semibold text-primary group-hover:text-accent transition-colors">
+                        Learn More
+                        <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    </span>
+                </a>
             </div>
         </div>
     </section>
@@ -271,7 +284,7 @@
                 {{-- Africa Coverage Map --}}
                 <div class="hidden lg:flex items-center justify-center" x-data x-intersect="$el.classList.add('animate-slide-in-right')">
                     @if(App\Models\Setting::get('homepage_africa_map_image'))
-                        <img src="{{ asset('storage/' . App\Models\Setting::get('homepage_africa_map_image')) }}" alt="Africa Coverage Map" class="w-full max-w-md aspect-square object-contain rounded-2xl">
+                        <img src="{{ asset('storage/' . App\Models\Setting::get('homepage_africa_map_image')) }}" alt="Africa Coverage Map" class="w-full max-w-md aspect-square object-contain rounded-2xl cursor-pointer" @click="$dispatch('open-lightbox', { src: $el.src, alt: $el.alt })">
                     @else
                     <div class="w-full max-w-md aspect-square bg-white/5 rounded-2xl border border-white/10 flex items-center justify-center backdrop-blur-sm">
                         <div class="text-center text-white/30">
