@@ -37,10 +37,12 @@ Route::get('/resources/whitepapers', fn() => view('public.resources.whitepapers'
 Route::get('/resources/cbn-hub', fn() => view('public.resources.cbn-hub'))->name('resources.cbn');
 // Route::get('/pricing', [PageController::class, 'pricing'])->name('pricing'); // Disabled
 
-Route::get('/software-solutions', [PageController::class, 'softwareSolutions'])->name('software-solutions');
-Route::get('/software-solutions/visitors-management', [PageController::class, 'vms'])->name('software-solutions.vms');
-Route::get('/software-solutions/poultry-management', [PageController::class, 'poultryManagement'])->name('software-solutions.poultry');
-Route::get('/software-solutions/career-portal', [PageController::class, 'careerPortal'])->name('software-solutions.career-portal');
+Route::middleware('products.enabled')->group(function () {
+    Route::get('/software-solutions', [PageController::class, 'softwareSolutions'])->name('software-solutions');
+    Route::get('/software-solutions/visitors-management', [PageController::class, 'vms'])->name('software-solutions.vms');
+    Route::get('/software-solutions/poultry-management', [PageController::class, 'poultryManagement'])->name('software-solutions.poultry');
+    Route::get('/software-solutions/career-portal', [PageController::class, 'careerPortal'])->name('software-solutions.career-portal');
+});
 Route::get('/demo', [PageController::class, 'demo'])->name('demo');
 Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/careers', [PageController::class, 'careers'])->name('careers');

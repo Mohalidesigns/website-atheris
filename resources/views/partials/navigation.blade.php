@@ -116,6 +116,7 @@
                 </div>
 
                 {{-- Products --}}
+                @if(App\Models\Setting::get('products_page_enabled'))
                 <div class="relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
                     <button class="px-4 py-2 text-sm font-medium text-text-primary hover:text-primary transition flex items-center gap-1">
                         Products
@@ -162,6 +163,7 @@
                         </div>
                     </div>
                 </div>
+                @endif
 
                 {{-- Resources --}}
                 <div class="relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
@@ -220,6 +222,7 @@
                     <a href="/solutions/esg-management" class="block py-2 text-sm text-text-secondary hover:text-primary">ESG Management</a>
                 </div>
 
+                @if(App\Models\Setting::get('products_page_enabled'))
                 <button @click="expanded = expanded === 'products' ? null : 'products'" class="w-full flex justify-between items-center py-3 text-sm font-semibold">Products <svg class="w-4 h-4 transition-transform" :class="{ 'rotate-180': expanded === 'products' }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
                 <div x-show="expanded === 'products'" x-collapse class="pl-4 space-y-2 pb-3">
                     <a href="/software-solutions" class="block py-2 text-sm text-text-secondary hover:text-primary">All Products</a>
@@ -227,6 +230,7 @@
                     <a href="/software-solutions/poultry-management" class="block py-2 text-sm text-text-secondary hover:text-primary">Poultry Management</a>
                     <a href="/software-solutions/career-portal" class="block py-2 text-sm text-text-secondary hover:text-primary">Career Portal</a>
                 </div>
+                @endif
 
                 <a href="/about" class="block py-3 text-sm font-semibold">About</a>
                 <a href="/resources/blog" class="block py-3 text-sm font-semibold">Blog</a>

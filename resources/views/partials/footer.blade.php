@@ -78,6 +78,7 @@
             </div>
 
             {{-- Products --}}
+            @if(App\Models\Setting::get('products_page_enabled'))
             <div>
                 <h4 class="font-semibold text-sm mb-4 text-white/90">Products</h4>
                 <ul class="space-y-3">
@@ -87,6 +88,7 @@
                     <li><a href="/software-solutions" class="text-sm text-white/60 hover:text-accent transition">All Products</a></li>
                 </ul>
             </div>
+            @endif
 
             {{-- Resources --}}
             <div>
