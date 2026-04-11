@@ -206,7 +206,7 @@
                 <div class="relative" x-data x-intersect="$el.classList.add('animate-slide-in-right')">
                     <div class="bg-gradient-to-br from-primary/5 to-info/5 rounded-2xl p-8 border border-border">
                         @if(App\Models\Setting::get('homepage_ai_image'))
-                            <img src="{{ asset('storage/' . App\Models\Setting::get('homepage_ai_image')) }}" alt="AI Intelligence Dashboard" class="rounded-xl w-full aspect-[4/3] object-cover shadow-lg">
+                            <img src="{{ asset('storage/' . App\Models\Setting::get('homepage_ai_image')) }}" alt="AI Intelligence Dashboard" class="rounded-xl w-full aspect-[4/3] object-contain shadow-lg cursor-pointer" @click="$dispatch('open-lightbox', { src: $el.src, alt: $el.alt })">
                         @else
                         <div class="bg-white rounded-xl shadow-lg aspect-[4/3] flex items-center justify-center relative overflow-hidden">
                             <div class="absolute inset-0 p-6">
