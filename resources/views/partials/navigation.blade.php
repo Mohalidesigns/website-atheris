@@ -53,15 +53,6 @@
                                     <div class="text-xs text-text-secondary mt-0.5">Enterprise-grade security</div>
                                 </div>
                             </a>
-                            <a href="/platform/third-party-risk" class="flex items-start gap-3 p-3 rounded-lg hover:bg-bg transition group">
-                                <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center shrink-0 group-hover:bg-accent/20 transition">
-                                    <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
-                                </div>
-                                <div>
-                                    <div class="font-semibold text-sm text-text-primary">Third Party Risk</div>
-                                    <div class="text-xs text-text-secondary mt-0.5">Vendor risk management</div>
-                                </div>
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -84,6 +75,7 @@
                                     <a href="/solutions/incident-management" class="block p-2 rounded-lg hover:bg-bg transition text-sm font-medium text-text-primary">Incident & Issue Management</a>
                                     <a href="/solutions/business-continuity" class="block p-2 rounded-lg hover:bg-bg transition text-sm font-medium text-text-primary">Business Continuity</a>
                                     <a href="/solutions/esg-management" class="block p-2 rounded-lg hover:bg-bg transition text-sm font-medium text-text-primary">ESG Management</a>
+                                    <a href="/platform/third-party-risk" class="block p-2 rounded-lg hover:bg-bg transition text-sm font-medium text-text-primary">Third Party Risk</a>
                                 </div>
                             </div>
                             <div>
@@ -208,7 +200,6 @@
                     <a href="/platform" class="block py-2 text-sm text-text-secondary hover:text-primary">Platform Overview</a>
                     <a href="/platform/ai-intelligence" class="block py-2 text-sm text-text-secondary hover:text-primary">AI Risk Intelligence</a>
                     <a href="/platform/security" class="block py-2 text-sm text-text-secondary hover:text-primary">Security & Trust</a>
-                    <a href="/platform/third-party-risk" class="block py-2 text-sm text-text-secondary hover:text-primary">Third Party Risk</a>
                 </div>
 
                 <button @click="expanded = expanded === 'solutions' ? null : 'solutions'" class="w-full flex justify-between items-center py-3 text-sm font-semibold">Solutions <svg class="w-4 h-4 transition-transform" :class="{ 'rotate-180': expanded === 'solutions' }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
@@ -220,6 +211,7 @@
                     <a href="/solutions/incident-management" class="block py-2 text-sm text-text-secondary hover:text-primary">Incident Management</a>
                     <a href="/solutions/business-continuity" class="block py-2 text-sm text-text-secondary hover:text-primary">Business Continuity</a>
                     <a href="/solutions/esg-management" class="block py-2 text-sm text-text-secondary hover:text-primary">ESG Management</a>
+                    <a href="/platform/third-party-risk" class="block py-2 text-sm text-text-secondary hover:text-primary">Third Party Risk</a>
                 </div>
 
                 @if(App\Models\Setting::get('products_page_enabled'))
