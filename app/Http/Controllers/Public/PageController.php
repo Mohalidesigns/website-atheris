@@ -77,14 +77,9 @@ class PageController extends Controller
         return view('public.customers', compact('customers', 'testimonials'));
     }
 
-    public function vsDigilent()
+    public function whyAtheris()
     {
-        return view('public.why-atheris.vs-diligent');
-    }
-
-    public function vsArcher()
-    {
-        return view('public.why-atheris.vs-archer');
+        return view('public.why-atheris.index');
     }
 
     public function roiCalculator()

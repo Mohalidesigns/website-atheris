@@ -99,8 +99,7 @@
                     </button>
                     <div x-show="open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" class="absolute left-0 top-full mt-1 w-72 bg-white rounded-xl shadow-2xl border border-border p-5 z-50">
                         <div class="space-y-1">
-                            <a href="/why-atheris/vs-diligent" class="block p-3 rounded-lg hover:bg-bg transition"><div class="font-semibold text-sm">Atheris vs. Diligent</div><div class="text-xs text-text-secondary mt-0.5">See why African banks choose us</div></a>
-                            <a href="/why-atheris/vs-archer" class="block p-3 rounded-lg hover:bg-bg transition"><div class="font-semibold text-sm">Atheris vs. Archer IRM</div><div class="text-xs text-text-secondary mt-0.5">Feature-by-feature comparison</div></a>
+                            <a href="/why-atheris" class="block p-3 rounded-lg hover:bg-bg transition"><div class="font-semibold text-sm">Our Advantages</div><div class="text-xs text-text-secondary mt-0.5">Why African institutions choose us</div></a>
                             <a href="/customers" class="block p-3 rounded-lg hover:bg-bg transition"><div class="font-semibold text-sm">Customer Stories</div><div class="text-xs text-text-secondary mt-0.5">How institutions succeed with us</div></a>
                             <a href="/why-atheris/roi-calculator" class="block p-3 rounded-lg hover:bg-bg transition"><div class="font-semibold text-sm">ROI Calculator</div><div class="text-xs text-text-secondary mt-0.5">Calculate your potential savings</div></a>
                         </div>
@@ -223,6 +222,13 @@
                     <a href="/software-solutions/career-portal" class="block py-2 text-sm text-text-secondary hover:text-primary">Career Portal</a>
                 </div>
                 @endif
+
+                <button @click="expanded = expanded === 'why' ? null : 'why'" class="w-full flex justify-between items-center py-3 text-sm font-semibold">Why Atheris <svg class="w-4 h-4 transition-transform" :class="{ 'rotate-180': expanded === 'why' }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+                <div x-show="expanded === 'why'" x-collapse class="pl-4 space-y-2 pb-3">
+                    <a href="/why-atheris" class="block py-2 text-sm text-text-secondary hover:text-primary">Our Advantages</a>
+                    <a href="/customers" class="block py-2 text-sm text-text-secondary hover:text-primary">Customer Stories</a>
+                    <a href="/why-atheris/roi-calculator" class="block py-2 text-sm text-text-secondary hover:text-primary">ROI Calculator</a>
+                </div>
 
                 <a href="/about" class="block py-3 text-sm font-semibold">About</a>
                 <a href="/resources/blog" class="block py-3 text-sm font-semibold">Blog</a>

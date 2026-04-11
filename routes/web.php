@@ -27,8 +27,7 @@ Route::get('/platform/integrations', [PageController::class, 'integrations'])->n
 Route::get('/platform/third-party-risk', [PageController::class, 'thirdPartyRisk'])->name('platform.tprm');
 Route::get('/solutions/{slug}', [SolutionController::class, 'show'])->name('solutions.show');
 Route::get('/industries/{slug}', [PageController::class, 'industry'])->name('industries.show');
-Route::get('/why-atheris/vs-diligent', [PageController::class, 'vsDigilent'])->name('why.diligent');
-Route::get('/why-atheris/vs-archer', [PageController::class, 'vsArcher'])->name('why.archer');
+Route::get('/why-atheris', [PageController::class, 'whyAtheris'])->name('why.index');
 Route::get('/why-atheris/roi-calculator', [PageController::class, 'roiCalculator'])->name('why.roi');
 Route::get('/resources/blog', [BlogController::class, 'index'])->name('blog.index');
 Route::get('/resources/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
