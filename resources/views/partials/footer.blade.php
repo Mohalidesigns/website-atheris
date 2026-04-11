@@ -18,9 +18,9 @@
 
     {{-- Main Footer --}}
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
             {{-- Brand Column --}}
-            <div class="col-span-2">
+            <div class="col-span-2 md:col-span-3 lg:col-span-2">
                 <a href="/" class="flex items-center gap-3 mb-6">
                     @if(App\Models\Setting::get('site_logo_light') || App\Models\Setting::get('site_logo'))
                         <img src="{{ asset('storage/' . (App\Models\Setting::get('site_logo_light') ?: App\Models\Setting::get('site_logo'))) }}" alt="{{ App\Models\Setting::get('site_name', 'Atheris') }}" class="h-10">
@@ -59,7 +59,6 @@
                     <li><a href="/platform/ai-intelligence" class="text-sm text-white/60 hover:text-accent transition">AI Intelligence</a></li>
                     <li><a href="/platform/security" class="text-sm text-white/60 hover:text-accent transition">Security & Trust</a></li>
                     <li><a href="/platform/integrations" class="text-sm text-white/60 hover:text-accent transition">Integrations</a></li>
-                    <li><a href="/platform/third-party-risk" class="text-sm text-white/60 hover:text-accent transition">Third Party Risk</a></li>
                 </ul>
             </div>
 
@@ -74,6 +73,7 @@
                     <li><a href="/solutions/incident-management" class="text-sm text-white/60 hover:text-accent transition">Incident Mgmt</a></li>
                     <li><a href="/solutions/business-continuity" class="text-sm text-white/60 hover:text-accent transition">Business Continuity</a></li>
                     <li><a href="/solutions/esg-management" class="text-sm text-white/60 hover:text-accent transition">ESG Management</a></li>
+                    <li><a href="/platform/third-party-risk" class="text-sm text-white/60 hover:text-accent transition">Third Party Risk</a></li>
                 </ul>
             </div>
 
