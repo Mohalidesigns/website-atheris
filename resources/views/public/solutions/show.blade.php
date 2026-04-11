@@ -17,7 +17,7 @@
                 <div class="hidden lg:block">
                     <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/10">
                         @if($solution->hero_image)
-                            <img src="{{ asset('storage/' . $solution->hero_image) }}" alt="{{ $solution->title }}" class="rounded-xl w-full aspect-[4/3] object-cover">
+                            <img src="{{ asset('storage/' . $solution->hero_image) }}" alt="{{ $solution->title }}" class="rounded-xl w-full object-contain cursor-pointer" @click="$dispatch('open-lightbox', { src: $el.src, alt: $el.alt })">
                         @else
                             <div class="bg-white/5 rounded-xl aspect-[4/3] flex items-center justify-center text-white/20 border border-dashed border-white/10">
                                 <div class="text-center"><svg class="w-16 h-16 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg><p class="text-sm">{{ $solution->title }} Screenshot</p><p class="text-xs mt-1">1200 x 900px</p></div>
