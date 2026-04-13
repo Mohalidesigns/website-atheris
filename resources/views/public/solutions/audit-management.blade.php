@@ -468,7 +468,7 @@
     <section class="py-24 lg:py-28 bg-bg border-t border-border">
         <div class="max-w-3xl mx-auto px-4 text-center">
             <div class="mb-8">
-                <img src="{{ asset('images/thridLine-presentation.png') }}" alt="ThirdLine" class="h-10 object-contain mx-auto">
+                <img src="{{ asset('images/thirdline-blue-logo.png') }}" alt="ThirdLine" class="h-10 object-contain mx-auto">
             </div>
             <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-text-primary mb-6">Ready to Transform Your Internal Audit Function?</h2>
             <p class="text-text-secondary text-lg lg:text-xl mb-10 leading-relaxed">Whether you're navigating complex regulatory requirements or modernising audit operations, ThirdLine gives your team the tools, intelligence, and confidence to deliver world-class internal audit — faster, smarter, and with full accountability.</p>
