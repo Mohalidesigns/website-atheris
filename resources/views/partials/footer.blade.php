@@ -1,4 +1,4 @@
-<footer class="bg-gradient-dark text-white">
+<footer class="text-white" style="background-color: #0B1E3A;">
     {{-- CTA Banner --}}
     <div class="border-b border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
