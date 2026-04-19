@@ -22,7 +22,7 @@
             <div class="bg-error/10 text-error text-sm px-4 py-3 rounded-lg mb-6">{{ $errors->first() }}</div>
             @endif
 
-            <form method="POST" action="/admin/login" class="space-y-5">
+            <form method="POST" action="{{ route('admin.login') }}" class="space-y-5">
                 @csrf
                 <div>
                     <label class="block text-sm font-medium text-text-primary mb-1.5">Email</label>
@@ -39,8 +39,6 @@
                 <button type="submit" class="w-full bg-primary hover:bg-primary-light text-white font-semibold py-3 rounded-lg transition">Sign In</button>
             </form>
         </div>
-
-        <p class="text-center mt-6 text-sm text-white/30">Default: admin@atherislimited.com / password</p>
     </div>
 </body>
 </html>

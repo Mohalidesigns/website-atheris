@@ -23,7 +23,7 @@ class AuthController extends Controller
         if (Auth::attempt($credentials, $request->boolean('remember'))) {
             $request->session()->regenerate();
             Auth::user()->update(['last_login_at' => now()]);
-            return redirect()->intended('/admin');
+            return redirect()->intended('/ath-admin');
         }
 
         return back()->withErrors(['email' => 'Invalid credentials.'])->onlyInput('email');
@@ -34,6 +34,6 @@ class AuthController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect('/admin/login');
+        return redirect('/ath-admin/login');
     }
 }

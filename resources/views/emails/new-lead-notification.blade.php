@@ -51,7 +51,7 @@
         </div>
     </div>
     <div class="footer">
-        <a href="{{ url('/admin/leads/' . $lead->id) }}">View in Admin Panel</a>
+        <a href="{{ route('admin.leads.show', $lead->id) }}">View in Admin Panel</a>
     </div>
 </body>
 </html>

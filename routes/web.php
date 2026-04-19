@@ -60,12 +60,12 @@ Route::get('/sitemap.xml', function () {
 })->name('sitemap');
 
 // Admin Auth
-Route::get('/admin/login', [AuthController::class, 'showLogin'])->name('admin.login');
-Route::post('/admin/login', [AuthController::class, 'login']);
-Route::post('/admin/logout', [AuthController::class, 'logout'])->name('admin.logout');
+Route::get('/ath-admin/login', [AuthController::class, 'showLogin'])->name('admin.login');
+Route::post('/ath-admin/login', [AuthController::class, 'login']);
+Route::post('/ath-admin/logout', [AuthController::class, 'logout'])->name('admin.logout');
 
 // Admin (Authenticated)
-Route::prefix('admin')->middleware('auth')->name('admin.')->group(function () {
+Route::prefix('ath-admin')->middleware('auth')->name('admin.')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('posts', PostController::class)->except('show');
     Route::resource('solutions', AdminSolutionController::class)->except(['show']);
