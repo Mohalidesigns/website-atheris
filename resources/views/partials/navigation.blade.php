@@ -1,18 +1,12 @@
-<nav class="bg-white sticky top-0 z-50 border-b border-border shadow-sm" x-data="mobileMenu()">
+<nav class="bg-bg sticky top-0 z-50 border-b border-border shadow-sm" x-data="mobileMenu()">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-20">
+        <div class="flex items-center justify-between h-24">
             {{-- Logo --}}
-            <a href="/" class="flex items-center gap-3 shrink-0">
+            <a href="/" class="flex items-center shrink-0">
                 @if(App\Models\Setting::get('site_logo'))
-                    <img src="{{ asset('storage/' . App\Models\Setting::get('site_logo')) }}" alt="{{ App\Models\Setting::get('site_name', 'Atheris') }}" class="h-10">
+                    <img src="{{ asset('storage/' . App\Models\Setting::get('site_logo')) }}" alt="{{ App\Models\Setting::get('site_name', 'Atheris') }}" class="h-14 lg:h-16 w-auto">
                 @else
-                    <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                        <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-                    </div>
-                    <div>
-                        <span class="text-xl font-bold text-primary">Atheris</span>
-                        <span class="block text-[10px] text-text-secondary uppercase tracking-widest leading-none -mt-0.5">GRC Platform</span>
-                    </div>
+                    <img src="{{ asset('images/brand/header-logo.png') }}" alt="Atheris — Governance, Risk, Compliance" class="h-14 lg:h-16 w-auto">
                 @endif
             </a>
 
