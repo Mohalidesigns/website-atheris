@@ -1,4 +1,4 @@
-<x-app-layout metaTitle="ESG Management Software — Atheris GRC" metaDescription="Environmental, Social, and Governance management software built for African institutions. Track ESG metrics, automate sustainability reporting, and meet global investor requirements with local regulatory alignment.">
+<x-app-layout :metaTitle="$solution->meta_title ?? 'ESG Management Software — Atheris GRC'" :metaDescription="$solution->meta_description ?? $solution->description">
     {{-- Hero --}}
     <section class="bg-gradient-hero py-20 lg:py-28">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
