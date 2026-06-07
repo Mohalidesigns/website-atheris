@@ -39,7 +39,7 @@ class BlogController extends Controller
         $category = Category::where('slug', $slug)->firstOrFail();
         $posts = Post::published()
             ->where('category_id', $category->id)
-            ->with(['author'])
+            ->with(['author', 'category'])
             ->latest('published_at')
             ->paginate(9);
 

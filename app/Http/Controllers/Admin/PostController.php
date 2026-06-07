@@ -35,7 +35,13 @@ class PostController extends Controller
             'meta_description' => 'nullable|string|max:500',
         ]);
 
-        $validated['slug'] = Str::slug($validated['title']);
+        $slug = Str::slug($validated['title']);
+        $originalSlug = $slug;
+        $counter = 1;
+        while (Post::where('slug', $slug)->exists()) {
+            $slug = $originalSlug . '-' . $counter++;
+        }
+        $validated['slug'] = $slug;
         $validated['author_id'] = auth()->id();
         $validated['reading_time'] = max(1, (int) ceil(str_word_count(strip_tags($validated['body'] ?? '')) / 200));
 

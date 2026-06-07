@@ -40,7 +40,13 @@ class SolutionController extends Controller
             'page_content' => 'nullable|array',
         ]);
 
-        $validated['slug'] = Str::slug($validated['title']);
+        $slug = Str::slug($validated['title']);
+        $originalSlug = $slug;
+        $counter = 1;
+        while (Solution::where('slug', $slug)->exists()) {
+            $slug = $originalSlug . '-' . $counter++;
+        }
+        $validated['slug'] = $slug;
         $validated['features'] = $validated['features'] ?? [];
         $validated['challenges'] = $validated['challenges'] ?? [];
         $validated['how_it_works'] = $validated['how_it_works'] ?? [];
