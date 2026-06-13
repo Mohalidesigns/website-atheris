@@ -129,7 +129,9 @@ return [
 
     'cookie' => env(
         'SESSION_COOKIE',
-        Str::slug((string) env('APP_NAME', 'laravel')).'-session'
+        // Fixed, versioned name. Bumping the suffix rotates the cookie so any
+        // stale cookies from a previous config are ignored by all browsers.
+        'atheris_session_v2'
     ),
 
     /*
