@@ -186,6 +186,7 @@ class SolutionController extends Controller
     {
         return match($slug) {
             'enterprise-risk-management' => ['dashboard', 'simulation', 'heatmap'],
+            'controls-management' => ['dashboard', 'exceptions'],
             default => ['dashboard', 'work_programs', 'risk', 'compliance'],
         };
     }

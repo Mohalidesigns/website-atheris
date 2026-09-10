@@ -24,8 +24,8 @@ class SolutionMetaSeeder extends Seeder
                 'meta_description' => 'AI-powered enterprise risk management with automated RCSA, Monte Carlo simulation, real-time KRI dashboards, and CBN ORMS alignment — built for Nigerian financial institutions.',
             ],
             'controls-management' => [
-                'meta_title' => 'Controls Management & Automated Testing Software | Atheris',
-                'meta_description' => 'Automated controls management and testing platform with pre-loaded CBN, BOFIA, and NDPA control libraries, continuous monitoring, and centralised evidence for Nigerian banks.',
+                'meta_title' => 'Control Testing & Exception Management Software for Banks | SecondLine by Atheris',
+                'meta_description' => 'Define, test, and rate internal controls, and track every exception to verified closure. Built for banks, microfinance banks, and fintechs in Nigeria and across Africa.',
             ],
             'compliance-management' => [
                 'meta_title' => 'Regulatory Compliance Management Software for Nigerian Banks | Atheris',

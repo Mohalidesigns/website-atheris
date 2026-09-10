@@ -116,6 +116,10 @@
                                 ['simulation', 'Monte Carlo Simulation', 'Screenshot for the Monte Carlo Simulation section'],
                                 ['heatmap', 'Risk Heatmap', 'Screenshot for the Risk Heatmap & Analysis section'],
                             ],
+                            'controls-management' => [
+                                ['dashboard', 'Dashboard (Hero)', 'SecondLine dashboard shown in the hero section'],
+                                ['exceptions', 'Exception Verification', 'Screenshot for the Exception Tracker section'],
+                            ],
                             default => [
                                 ['dashboard', 'Dashboard (Hero)', 'Main dashboard shown in the hero section'],
                                 ['work_programs', 'Work Programs', 'Screenshot for the Work Programs & Fieldwork section'],

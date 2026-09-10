@@ -10,11 +10,13 @@ class SolutionController extends Controller
     public function show(string $slug)
     {
         $solution = Solution::where('slug', $slug)->where('status', 'published')->firstOrFail();
-        $otherSolutions = Solution::published()->where('id', '!=', $solution->id)->get();
+        $otherSolutions = Solution::published()
+            ->where('id', '!=', $solution->id)
+            ->select('id', 'slug', 'title', 'description')
+            ->get();
 
         // Dedicated views for solutions with rich custom content
-        $dedicatedViews = ['audit-management', 'esg-management', 'enterprise-risk-management'];
-        if (in_array($slug, $dedicatedViews)) {
+        if (view()->exists("public.solutions.{$slug}")) {
             return view("public.solutions.{$slug}", compact('solution', 'otherSolutions'));
         }
 

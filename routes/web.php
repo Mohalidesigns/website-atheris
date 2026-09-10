@@ -25,6 +25,7 @@ Route::get('/platform/ai-intelligence', [PageController::class, 'aiIntelligence'
 Route::get('/platform/security', [PageController::class, 'security'])->name('platform.security');
 Route::get('/platform/integrations', [PageController::class, 'integrations'])->name('platform.integrations');
 Route::get('/platform/third-party-risk', [PageController::class, 'thirdPartyRisk'])->name('platform.tprm');
+Route::redirect('/secondline', '/solutions/controls-management', 301)->name('secondline');
 Route::get('/solutions/{slug}', [SolutionController::class, 'show'])->name('solutions.show');
 Route::get('/industries/{slug}', [PageController::class, 'industry'])->name('industries.show');
 Route::get('/why-atheris', [PageController::class, 'whyAtheris'])->name('why.index');
