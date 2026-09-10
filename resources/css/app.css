@@ -5,9 +5,38 @@
 @source '../**/*.blade.php';
 @source '../**/*.js';
 
+/* ── Fedra Sans ───────────────────────────────────────────────────────────
+   Self-hosted WOFF2 from public/fonts/fedra-sans. Three cuts: Light (300),
+   Book (400) and Medium, stretched across 500–900 so bold/semibold utilities
+   resolve to it. Licensed OTF originals live in storage/app/fonts-source. */
+@font-face {
+    font-family: 'Fedra Sans';
+    src: url('/fonts/fedra-sans/FedraSansStd-LightLF.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fedra Sans';
+    src: url('/fonts/fedra-sans/FedraSansStd-BookLF.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fedra Sans';
+    src: url('/fonts/fedra-sans/FedraSansStd-MediumLF.woff2') format('woff2');
+    font-weight: 500 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+
 @theme {
-    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
-    --font-display: 'Space Grotesk', 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-sans: 'Fedra Sans', 'Helvetica Neue', Arial, ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Fedra Sans', 'Helvetica Neue', Arial, ui-sans-serif, system-ui, sans-serif;
     --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
 
     /* Atheris Brand Palette — Ink. Amber. Paper. */
@@ -197,10 +226,9 @@
     }
 
     body {
-        font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+        font-family: 'Fedra Sans', 'Helvetica Neue', Arial, ui-sans-serif, system-ui, sans-serif;
         color: var(--color-text-primary);
         background-color: var(--color-bg);
-        font-feature-settings: 'ss01', 'cv11';
     }
 
     ::selection {
@@ -210,11 +238,11 @@
 }
 
 /* Brand typography — highest specificity so utility classes can't silently
-   override the display/mono families. Space Grotesk carries display,
+   override the display/mono families. Fedra Sans carries display,
    JetBrains Mono carries numerals and system language. */
 html h1, html h2, html h3, html h4, html h5, html h6,
 html .font-display {
-    font-family: 'Space Grotesk', 'Inter', ui-sans-serif, system-ui, sans-serif !important;
+    font-family: 'Fedra Sans', 'Helvetica Neue', Arial, ui-sans-serif, system-ui, sans-serif !important;
     letter-spacing: -0.02em;
 }
 
