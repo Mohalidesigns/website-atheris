@@ -69,7 +69,6 @@
                                     <a href="/solutions/incident-management" class="block p-2 rounded-lg hover:bg-bg transition text-sm font-medium text-text-primary">Incident & Issue Management</a>
                                     <a href="/solutions/business-continuity" class="block p-2 rounded-lg hover:bg-bg transition text-sm font-medium text-text-primary">Business Continuity</a>
                                     <a href="/solutions/esg-management" class="block p-2 rounded-lg hover:bg-bg transition text-sm font-medium text-text-primary">ESG Management</a>
-                                    <a href="/platform/third-party-risk" class="block p-2 rounded-lg hover:bg-bg transition text-sm font-medium text-text-primary">Third Party Risk</a>
                                 </div>
                             </div>
                             <div>
@@ -204,7 +203,6 @@
                     <a href="/solutions/incident-management" class="block py-2 text-sm text-text-secondary hover:text-primary">Incident Management</a>
                     <a href="/solutions/business-continuity" class="block py-2 text-sm text-text-secondary hover:text-primary">Business Continuity</a>
                     <a href="/solutions/esg-management" class="block py-2 text-sm text-text-secondary hover:text-primary">ESG Management</a>
-                    <a href="/platform/third-party-risk" class="block py-2 text-sm text-text-secondary hover:text-primary">Third Party Risk</a>
                 </div>
 
                 @if(App\Models\Setting::get('products_page_enabled'))

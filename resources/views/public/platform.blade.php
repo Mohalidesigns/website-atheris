@@ -37,43 +37,6 @@
         </div>
     </section>
 
-    {{-- Additional Capabilities --}}
-    <section class="py-20 bg-bg">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <span class="inline-block bg-accent/10 text-accent text-sm font-semibold px-4 py-1.5 rounded-full mb-4">Extended Capabilities</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-4">Go beyond traditional GRC</h2>
-                <p class="text-lg text-text-secondary">Purpose-built modules for emerging risk domains that global platforms overlook in the African market.</p>
-            </div>
-            <div class="grid md:grid-cols-2 gap-8">
-                <a href="/platform/third-party-risk" class="group bg-white rounded-2xl p-8 border border-border hover:border-accent/30 hover:shadow-xl transition-all hover:-translate-y-1">
-                    <div class="flex items-start gap-4">
-                        <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-accent/20 transition">
-                            <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-text-primary mb-2 group-hover:text-primary transition">Third Party Risk Management</h3>
-                            <p class="text-text-secondary leading-relaxed mb-4">AI-powered vendor assessments, continuous monitoring, and Nigerian regulatory compliance. Know your vendors, control your risk.</p>
-                            <span class="inline-flex items-center text-sm font-semibold text-accent">Learn more <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></span>
-                        </div>
-                    </div>
-                </a>
-                <a href="/solutions/esg-management" class="group bg-white rounded-2xl p-8 border border-border hover:border-secondary/30 hover:shadow-xl transition-all hover:-translate-y-1">
-                    <div class="flex items-start gap-4">
-                        <div class="w-14 h-14 bg-secondary/10 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-secondary/20 transition">
-                            <svg class="w-7 h-7 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-text-primary mb-2 group-hover:text-primary transition">ESG Management</h3>
-                            <p class="text-text-secondary leading-relaxed mb-4">Track environmental, social, and governance metrics. Generate investor-ready sustainability reports aligned with NGX, GRI, and TCFD.</p>
-                            <span class="inline-flex items-center text-sm font-semibold text-secondary">Learn more <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-
     {{-- Integration --}}
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

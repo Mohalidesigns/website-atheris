@@ -115,6 +115,7 @@
                                 ['dashboard', 'Command Centre Dashboard', 'Main ERM command centre shown in the hero and dashboard section'],
                                 ['simulation', 'Monte Carlo Simulation', 'Screenshot for the Monte Carlo Simulation section'],
                                 ['heatmap', 'Risk Heatmap', 'Screenshot for the Risk Heatmap & Analysis section'],
+                                ['tprm', 'Third Party Risk', 'Screenshot for the Third Party Risk section'],
                             ],
                             'controls-management' => [
                                 ['dashboard', 'Dashboard (Hero)', 'SecondLine dashboard shown in the hero section'],

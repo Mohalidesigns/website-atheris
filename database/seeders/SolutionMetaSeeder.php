@@ -21,7 +21,7 @@ class SolutionMetaSeeder extends Seeder
             ],
             'enterprise-risk-management' => [
                 'meta_title' => 'AI-Powered Enterprise Risk Management for Africa | Atheris ERM',
-                'meta_description' => 'AI-powered enterprise risk management with automated RCSA, Monte Carlo simulation, real-time KRI dashboards, and CBN ORMS alignment — built for Nigerian financial institutions.',
+                'meta_description' => 'AI-powered enterprise risk management with automated RCSA, Monte Carlo simulation, real-time KRI dashboards, third-party and vendor risk, and CBN ORMS alignment — built for Nigerian financial institutions.',
             ],
             'controls-management' => [
                 'meta_title' => 'Control Testing & Exception Management Software for Banks | SecondLine by Atheris',

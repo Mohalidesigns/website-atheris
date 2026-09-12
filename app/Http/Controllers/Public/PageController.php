@@ -36,11 +36,6 @@ class PageController extends Controller
         return view('public.platform-integrations');
     }
 
-    public function thirdPartyRisk()
-    {
-        return view('public.platform-tprm');
-    }
-
     public function pricing()
     {
         $faqs = Faq::active()->where('category', 'pricing')->orWhere('category', 'general')->get();

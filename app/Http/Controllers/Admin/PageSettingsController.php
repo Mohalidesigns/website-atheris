@@ -22,7 +22,7 @@ class PageSettingsController extends Controller
             'page_integrations' => ['label' => 'Integrations', 'desc' => 'Integrations page hero text'],
             'page_pricing'      => ['label' => 'Pricing', 'desc' => 'Pricing headline and description'],
             'page_demo'         => ['label' => 'Demo Page', 'desc' => 'Demo form headline and description'],
-            'page_tprm'         => ['label' => 'Third Party Risk (TPRM)', 'desc' => 'TPRM page hero text and dashboard screenshot'],
+            'page_tprm'         => ['label' => 'Third Party Risk (TPRM)', 'desc' => 'Dashboard screenshot for the Third Party Risk section of the Enterprise Risk Management page'],
             'page_about'        => ['label' => 'About', 'desc' => 'Hero text, mission, vision'],
             'page_careers'      => ['label' => 'Careers', 'desc' => 'Careers page hero text'],
             'page_customers'    => ['label' => 'Customers', 'desc' => 'Customers page hero text'],

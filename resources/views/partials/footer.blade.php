@@ -67,7 +67,6 @@
                     <li><a href="/solutions/incident-management" class="text-sm text-white/60 hover:text-accent transition">Incident Mgmt</a></li>
                     <li><a href="/solutions/business-continuity" class="text-sm text-white/60 hover:text-accent transition">Business Continuity</a></li>
                     <li><a href="/solutions/esg-management" class="text-sm text-white/60 hover:text-accent transition">ESG Management</a></li>
-                    <li><a href="/platform/third-party-risk" class="text-sm text-white/60 hover:text-accent transition">Third Party Risk</a></li>
                 </ul>
             </div>
 

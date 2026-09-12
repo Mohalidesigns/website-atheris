@@ -148,6 +148,9 @@
                             @case('refresh-cw')
                                 <svg class="w-7 h-7 text-primary group-hover:text-accent transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
                                 @break
+                            @case('globe')
+                                <svg class="w-7 h-7 text-primary group-hover:text-accent transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                @break
                         @endswitch
                     </div>
                     <h3 class="text-xl font-bold text-text-primary mb-3 group-hover:text-primary transition-colors">{{ $solution->title }}</h3>
@@ -158,19 +161,6 @@
                     </span>
                 </a>
                 @endforeach
-
-                {{-- Third Party Risk (standalone page, not in solutions table) --}}
-                <a href="/platform/third-party-risk" class="group bg-white rounded-2xl p-8 border border-border hover:border-accent/30 card-hover" x-intersect="$el.classList.add('animate-scale-in')" style="animation-delay: {{ count($solutions) * 100 }}ms">
-                    <div class="w-14 h-14 rounded-xl bg-primary/5 group-hover:bg-accent/10 flex items-center justify-center mb-6 transition-colors">
-                        <svg class="w-7 h-7 text-primary group-hover:text-accent transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-text-primary mb-3 group-hover:text-primary transition-colors">Third Party Risk Management</h3>
-                    <p class="text-text-secondary text-sm leading-relaxed mb-4">Assess, monitor, and manage vendor and third-party risks across your supply chain with automated due diligence and continuous monitoring.</p>
-                    <span class="inline-flex items-center text-sm font-semibold text-primary group-hover:text-accent transition-colors">
-                        Learn More
-                        <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-                    </span>
-                </a>
             </div>
         </div>
     </section>
