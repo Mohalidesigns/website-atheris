@@ -27,6 +27,10 @@ Route::get('/platform/integrations', [PageController::class, 'integrations'])->n
 // Third party risk is disabled — redirect the old URL to Enterprise Risk Management.
 Route::redirect('/platform/third-party-risk', '/solutions/enterprise-risk-management', 301)->name('platform.tprm');
 Route::redirect('/secondline', '/solutions/controls-management', 301)->name('secondline');
+// Disabled modules — 301 old URLs to the platform overview (registered before the
+// wildcard so they win over the SolutionController 404).
+Route::redirect('/solutions/incident-management', '/platform', 301);
+Route::redirect('/solutions/business-continuity', '/platform', 301);
 Route::get('/solutions/{slug}', [SolutionController::class, 'show'])->name('solutions.show');
 Route::get('/industries/{slug}', [PageController::class, 'industry'])->name('industries.show');
 Route::get('/why-atheris', [PageController::class, 'whyAtheris'])->name('why.index');
