@@ -12,13 +12,12 @@
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-bg rounded-2xl border border-border p-8 mb-16">
-                @if(App\Models\Setting::get('page_platform_architecture_image'))
-                    <img src="{{ asset('storage/' . App\Models\Setting::get('page_platform_architecture_image')) }}" alt="Platform Architecture" class="w-full rounded-xl">
-                @else
-                <div class="aspect-[16/7] bg-white rounded-xl border border-dashed border-gray-200 flex items-center justify-center text-text-secondary/30">
-                    <div class="text-center"><svg class="w-20 h-20 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg><p class="text-lg font-medium">Platform Architecture Diagram</p><p class="text-sm mt-1">Image Placeholder — 1400 x 700px</p></div>
-                </div>
-                @endif
+                @php
+                    $architectureImg = App\Models\Setting::get('page_platform_architecture_image')
+                        ? asset('storage/' . App\Models\Setting::get('page_platform_architecture_image'))
+                        : asset('images/platform-internal-audit.png');
+                @endphp
+                <img src="{{ $architectureImg }}" alt="Internal Audit Platform" class="w-full rounded-xl cursor-pointer" @click="$dispatch('open-lightbox', { src: $el.src, alt: $el.alt })">
             </div>
 
             {{-- Module Grid --}}

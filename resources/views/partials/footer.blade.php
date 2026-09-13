@@ -60,12 +60,10 @@
             <div>
                 <h4 class="font-semibold text-sm mb-4 text-white/90">Solutions</h4>
                 <ul class="space-y-3">
-                    <li><a href="/solutions/audit-management" class="text-sm text-white/60 hover:text-accent transition">Audit Management</a></li>
+                    <li><a href="/solutions/audit-management" class="text-sm text-white/60 hover:text-accent transition">Internal Audit Management</a></li>
                     <li><a href="/solutions/enterprise-risk-management" class="text-sm text-white/60 hover:text-accent transition">Risk Management</a></li>
-                    <li><a href="/solutions/controls-management" class="text-sm text-white/60 hover:text-accent transition">Controls Management</a></li>
+                    <li><a href="/solutions/controls-management" class="text-sm text-white/60 hover:text-accent transition">Internal Control Management</a></li>
                     <li><a href="/solutions/compliance-management" class="text-sm text-white/60 hover:text-accent transition">Compliance</a></li>
-                    <li><a href="/solutions/incident-management" class="text-sm text-white/60 hover:text-accent transition">Incident Mgmt</a></li>
-                    <li><a href="/solutions/business-continuity" class="text-sm text-white/60 hover:text-accent transition">Business Continuity</a></li>
                     <li><a href="/solutions/esg-management" class="text-sm text-white/60 hover:text-accent transition">ESG Management</a></li>
                 </ul>
             </div>

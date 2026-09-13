@@ -164,52 +164,6 @@
         </div>
     </section>
 
-    {{-- Third Party Risk Section --}}
-    @php
-        $tprmImg = ($solution->screenshots && isset($solution->screenshots['tprm']))
-            ? asset('storage/' . $solution->screenshots['tprm'])
-            : (App\Models\Setting::get('page_tprm_dashboard_image')
-                ? asset('storage/' . App\Models\Setting::get('page_tprm_dashboard_image'))
-                : null);
-    @endphp
-    <section id="third-party-risk" class="py-20 bg-bg scroll-mt-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="order-2 lg:order-1">
-                    <div class="bg-white rounded-2xl p-4 border border-border shadow-lg">
-                        @if($tprmImg)
-                            <img src="{{ $tprmImg }}" alt="Third Party Risk Dashboard" class="rounded-xl w-full cursor-pointer" @click="$dispatch('open-lightbox', { src: $el.src, alt: $el.alt })">
-                        @else
-                            <div class="aspect-[4/3] bg-bg rounded-xl border border-dashed border-gray-200 flex items-center justify-center text-text-secondary/30">
-                                <div class="text-center"><svg class="w-16 h-16 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg><p class="text-sm font-medium">Third Party Risk Dashboard</p><p class="text-xs mt-1">Upload via Admin &rarr; Pages &rarr; Third Party Risk</p></div>
-                            </div>
-                        @endif
-                    </div>
-                </div>
-                <div class="order-1 lg:order-2">
-                    <span class="inline-block bg-primary/5 text-primary text-sm font-semibold px-4 py-1.5 rounded-full mb-4">Third Party Risk</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-6">Vendor risk, on the same register</h2>
-                    <p class="text-text-secondary leading-relaxed mb-6">Nigerian financial institutions rely on hundreds of third parties — payment processors, cloud providers, agent networks, cash-in-transit firms. Third party risk isn't a separate discipline here: vendors sit on the same enterprise risk register, scored with the same taxonomy, and escalated through the same workflow as every other risk you carry.</p>
-                    <ul class="space-y-3">
-                        @foreach([
-                            'Vendor register with owner, contract, criticality tier, and current risk position',
-                            'Due diligence questionnaires issued, chased, scored, and approved on a schedule set by tier',
-                            'Continuous monitoring between formal reviews — diligence does not stop at onboarding',
-                            'Contract and SLA tracking with renewals, expiries, and breaches surfaced before they bite',
-                            'Concentration risk exposed when units onboard the same vendor independently',
-                            'NDPA 2023 data-processing obligations tracked per vendor, with evidence retained',
-                        ] as $item)
-                        <li class="flex items-start gap-3 text-sm text-text-secondary">
-                            <svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            {{ $item }}
-                        </li>
-                        @endforeach
-                    </ul>
-                    <p class="text-sm text-text-secondary/80 leading-relaxed mt-6">Because vendor risks live on the enterprise register rather than in a parallel system, a failing third party moves your residual risk position directly — no reconciliation between two registers, no argument about which one is correct.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
     {{-- All Features Grid --}}
     <section id="features" class="py-20 bg-bg">

@@ -62,12 +62,10 @@
                             <div>
                                 <h4 class="text-xs font-bold text-text-secondary uppercase tracking-wider mb-3">By Module</h4>
                                 <div class="space-y-1">
-                                    <a href="/solutions/audit-management" class="block p-2 rounded-lg hover:bg-bg transition text-sm font-medium text-text-primary">Audit Management</a>
+                                    <a href="/solutions/audit-management" class="block p-2 rounded-lg hover:bg-bg transition text-sm font-medium text-text-primary">Internal Audit Management</a>
                                     <a href="/solutions/enterprise-risk-management" class="block p-2 rounded-lg hover:bg-bg transition text-sm font-medium text-text-primary">Enterprise Risk Management</a>
-                                    <a href="/solutions/controls-management" class="block p-2 rounded-lg hover:bg-bg transition text-sm font-medium text-text-primary">Controls Management</a>
+                                    <a href="/solutions/controls-management" class="block p-2 rounded-lg hover:bg-bg transition text-sm font-medium text-text-primary">Internal Control Management</a>
                                     <a href="/solutions/compliance-management" class="block p-2 rounded-lg hover:bg-bg transition text-sm font-medium text-text-primary">Compliance Management</a>
-                                    <a href="/solutions/incident-management" class="block p-2 rounded-lg hover:bg-bg transition text-sm font-medium text-text-primary">Incident & Issue Management</a>
-                                    <a href="/solutions/business-continuity" class="block p-2 rounded-lg hover:bg-bg transition text-sm font-medium text-text-primary">Business Continuity</a>
                                     <a href="/solutions/esg-management" class="block p-2 rounded-lg hover:bg-bg transition text-sm font-medium text-text-primary">ESG Management</a>
                                 </div>
                             </div>
@@ -196,12 +194,10 @@
 
                 <button @click="expanded = expanded === 'solutions' ? null : 'solutions'" class="w-full flex justify-between items-center py-3 text-sm font-semibold">Solutions <svg class="w-4 h-4 transition-transform" :class="{ 'rotate-180': expanded === 'solutions' }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
                 <div x-show="expanded === 'solutions'" x-collapse class="pl-4 space-y-2 pb-3">
-                    <a href="/solutions/audit-management" class="block py-2 text-sm text-text-secondary hover:text-primary">Audit Management</a>
+                    <a href="/solutions/audit-management" class="block py-2 text-sm text-text-secondary hover:text-primary">Internal Audit Management</a>
                     <a href="/solutions/enterprise-risk-management" class="block py-2 text-sm text-text-secondary hover:text-primary">Enterprise Risk Management</a>
-                    <a href="/solutions/controls-management" class="block py-2 text-sm text-text-secondary hover:text-primary">Controls Management</a>
+                    <a href="/solutions/controls-management" class="block py-2 text-sm text-text-secondary hover:text-primary">Internal Control Management</a>
                     <a href="/solutions/compliance-management" class="block py-2 text-sm text-text-secondary hover:text-primary">Compliance Management</a>
-                    <a href="/solutions/incident-management" class="block py-2 text-sm text-text-secondary hover:text-primary">Incident Management</a>
-                    <a href="/solutions/business-continuity" class="block py-2 text-sm text-text-secondary hover:text-primary">Business Continuity</a>
                     <a href="/solutions/esg-management" class="block py-2 text-sm text-text-secondary hover:text-primary">ESG Management</a>
                 </div>
 

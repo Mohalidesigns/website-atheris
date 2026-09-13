@@ -24,8 +24,8 @@ Route::get('/platform', [PageController::class, 'platform'])->name('platform');
 Route::get('/platform/ai-intelligence', [PageController::class, 'aiIntelligence'])->name('platform.ai');
 Route::get('/platform/security', [PageController::class, 'security'])->name('platform.security');
 Route::get('/platform/integrations', [PageController::class, 'integrations'])->name('platform.integrations');
-// Third party risk is a capability of Enterprise Risk Management, not a module of its own.
-Route::redirect('/platform/third-party-risk', '/solutions/enterprise-risk-management#third-party-risk', 301)->name('platform.tprm');
+// Third party risk is disabled — redirect the old URL to Enterprise Risk Management.
+Route::redirect('/platform/third-party-risk', '/solutions/enterprise-risk-management', 301)->name('platform.tprm');
 Route::redirect('/secondline', '/solutions/controls-management', 301)->name('secondline');
 Route::get('/solutions/{slug}', [SolutionController::class, 'show'])->name('solutions.show');
 Route::get('/industries/{slug}', [PageController::class, 'industry'])->name('industries.show');
