@@ -42,7 +42,7 @@ class LeadController extends Controller
             return response()->json(['success' => true, 'message' => 'Thank you! We will be in touch shortly.']);
         }
 
-        return back()->with('success', 'Thank you! We will be in touch shortly.');
+        return back()->with('success', 'Thank you! We will be in touch shortly.')->with('lead_form_type', $validated['form_type']);
     }
 
     public function newsletter(Request $request)

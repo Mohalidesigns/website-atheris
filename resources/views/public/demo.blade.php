@@ -39,6 +39,15 @@
                     <div class="bg-secondary/10 text-secondary p-4 rounded-xl mb-6 font-medium">{{ session('success') }}</div>
                     @endif
 
+                    @if(session('lead_form_type') === 'demo')
+                    {{-- Conversion tracking: fires once on a successful demo request --}}
+                    <script>
+                        if (typeof fbq === 'function') fbq('track', 'Lead');
+                        window.dataLayer = window.dataLayer || [];
+                        window.dataLayer.push({ event: 'generate_lead', form_type: 'demo' });
+                    </script>
+                    @endif
+
                     <form action="/leads" method="POST" class="space-y-5">
                         @csrf
                         <input type="hidden" name="form_type" value="demo">
