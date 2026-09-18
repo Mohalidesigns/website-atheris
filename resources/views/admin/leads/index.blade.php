@@ -1,7 +1,7 @@
 <x-admin-layout title="Leads">
     <h2 class="text-xl font-bold mb-6">Lead Management</h2>
     <div class="bg-white rounded-xl border border-border overflow-hidden">
-        <table class="w-full"><thead><tr class="bg-gray-50 border-b border-border text-left"><th class="p-4 text-xs font-semibold text-text-secondary uppercase">Name</th><th class="p-4 text-xs font-semibold text-text-secondary uppercase">Email</th><th class="p-4 text-xs font-semibold text-text-secondary uppercase">Company</th><th class="p-4 text-xs font-semibold text-text-secondary uppercase">Type</th><th class="p-4 text-xs font-semibold text-text-secondary uppercase">Status</th><th class="p-4 text-xs font-semibold text-text-secondary uppercase">Date</th></tr></thead>
+        <table class="w-full"><thead><tr class="bg-gray-50 border-b border-border text-left"><th class="p-4 text-xs font-semibold text-text-secondary uppercase">Name</th><th class="p-4 text-xs font-semibold text-text-secondary uppercase">Email</th><th class="p-4 text-xs font-semibold text-text-secondary uppercase">Company</th><th class="p-4 text-xs font-semibold text-text-secondary uppercase">Type</th><th class="p-4 text-xs font-semibold text-text-secondary uppercase">Status</th><th class="p-4 text-xs font-semibold text-text-secondary uppercase">Date</th><th class="p-4 text-xs font-semibold text-text-secondary uppercase text-right">Actions</th></tr></thead>
         <tbody class="divide-y divide-border">
             @forelse($leads as $lead)
             <tr class="hover:bg-gray-50">
@@ -17,9 +17,14 @@
                     </form>
                 </td>
                 <td class="p-4 text-sm text-text-secondary">{{ $lead->created_at->format('M d, Y') }}</td>
+                <td class="p-4 text-right">
+                    <form action="{{ route('admin.leads.destroy', $lead) }}" method="POST" class="inline" onsubmit="return confirm('Delete this lead permanently? This cannot be undone.');">@csrf @method('DELETE')
+                        <button type="submit" class="text-xs font-medium text-error hover:underline">Delete</button>
+                    </form>
+                </td>
             </tr>
             @empty
-            <tr><td colspan="6" class="p-8 text-center text-text-secondary">No leads yet.</td></tr>
+            <tr><td colspan="7" class="p-8 text-center text-text-secondary">No leads yet.</td></tr>
             @endforelse
         </tbody></table>
     </div>

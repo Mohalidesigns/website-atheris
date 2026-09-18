@@ -41,4 +41,10 @@ class LeadController extends Controller
         $lead->update(['status' => $request->status]);
         return back()->with('success', 'Lead status updated.');
     }
+
+    public function destroy(Lead $lead)
+    {
+        $lead->delete();
+        return redirect()->route('admin.leads.index')->with('success', 'Lead deleted.');
+    }
 }

@@ -81,6 +81,7 @@ Route::prefix('ath-admin')->middleware('auth')->name('admin.')->group(function (
     Route::get('/leads', [AdminLeadController::class, 'index'])->name('leads.index');
     Route::get('/leads/{lead}', [AdminLeadController::class, 'show'])->name('leads.show');
     Route::patch('/leads/{lead}/status', [AdminLeadController::class, 'updateStatus'])->name('leads.status');
+    Route::delete('/leads/{lead}', [AdminLeadController::class, 'destroy'])->name('leads.destroy');
     Route::get('/media', [MediaController::class, 'index'])->name('media.index');
     Route::post('/media', [MediaController::class, 'store'])->name('media.store');
     Route::delete('/media/{media}', [MediaController::class, 'destroy'])->name('media.destroy');
