@@ -163,6 +163,7 @@
                 </div>
 
                 <a href="/about" class="px-4 py-2 text-sm font-medium text-text-primary hover:text-primary transition">About</a>
+                <a href="/contact" class="px-4 py-2 text-sm font-medium text-text-primary hover:text-primary transition">Contact</a>
             </div>
 
             {{-- CTA Buttons --}}
@@ -220,6 +221,7 @@
 
                 <a href="/about" class="block py-3 text-sm font-semibold">About</a>
                 <a href="/resources/blog" class="block py-3 text-sm font-semibold">Blog</a>
+                <a href="/contact" class="block py-3 text-sm font-semibold">Contact</a>
             </div>
 
             <div class="flex flex-col gap-3 pt-4 border-t border-border">
