@@ -39,6 +39,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="google-site-verification" content="BSAzXuk2ml-2K-9ACNiNnhLNO_TQldxpHYgO2RHO7Sg">
     <title>{{ $metaTitle ?? 'Atheris Limited — Africa\'s AI-First GRC Platform' }}</title>
     <meta name="description" content="{{ $metaDescription ?? 'Africa\'s only AI-first Governance, Risk & Compliance platform with native CBN, BOFIA, and NDPA compliance — purpose-built for Nigerian financial institutions.' }}">
     <meta property="og:title" content="{{ $metaTitle ?? 'Atheris Limited' }}">
