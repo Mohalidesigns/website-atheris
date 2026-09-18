@@ -99,6 +99,7 @@
                     <li><a href="/about" class="text-sm text-white/60 hover:text-accent transition">About Us</a></li>
                     <li><a href="/careers" class="text-sm text-white/60 hover:text-accent transition">Careers</a></li>
                     <li><a href="/partners" class="text-sm text-white/60 hover:text-accent transition">Partners</a></li>
+                    <li><a href="/contact" class="text-sm text-white/60 hover:text-accent transition">Contact</a></li>
                     <li><a href="/legal/privacy" class="text-sm text-white/60 hover:text-accent transition">Privacy Policy</a></li>
                     <li><a href="/legal/terms" class="text-sm text-white/60 hover:text-accent transition">Terms of Service</a></li>
                 </ul>

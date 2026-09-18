@@ -7,6 +7,7 @@
     <url><loc>{{ url('/platform/integrations') }}</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
     <url><loc>{{ url('/why-atheris') }}</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
     <url><loc>{{ url('/demo') }}</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+    <url><loc>{{ url('/contact') }}</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
     <url><loc>{{ url('/about') }}</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
     <url><loc>{{ url('/careers') }}</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
     <url><loc>{{ url('/partners') }}</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>

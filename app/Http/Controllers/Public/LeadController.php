@@ -22,7 +22,7 @@ class LeadController extends Controller
             'role' => 'nullable|string|max:100',
             'phone' => 'nullable|string|max:30',
             'message' => 'nullable|string|max:2000',
-            'form_type' => 'nullable|string|in:demo,contact,newsletter,download',
+            'form_type' => 'nullable|string|in:demo,contact,newsletter,download,partner',
         ]);
 
         $validated['source'] = 'website';

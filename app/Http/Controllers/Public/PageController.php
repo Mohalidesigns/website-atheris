@@ -47,6 +47,11 @@ class PageController extends Controller
         return view('public.demo');
     }
 
+    public function contact()
+    {
+        return view('public.contact');
+    }
+
     public function about()
     {
         $team = TeamMember::active()->get();

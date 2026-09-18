@@ -10,6 +10,78 @@
             </div>
             @endforeach
         </div>
-        <div class="text-center"><a href="/demo" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-light text-white font-bold px-8 py-4 rounded-xl shadow-lg transition">Become a Partner</a></div>
+        <div class="text-center"><a href="#apply" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-light text-white font-bold px-8 py-4 rounded-xl shadow-lg transition">Become a Partner</a></div>
     </div></section>
+
+    {{-- Partner application form --}}
+    <section id="apply" class="py-20 bg-bg">
+        <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-text-primary mb-3">Apply to the Partner Program</h2>
+                <p class="text-text-secondary">Tell us about your organisation and how you'd like to partner. Our team will reach out to discuss next steps.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-border shadow-sm p-8">
+                @if(session('success'))
+                <div class="bg-secondary/10 text-secondary p-4 rounded-xl mb-6 font-medium">{{ session('success') }}</div>
+                @endif
+
+                @if(session('lead_form_type') === 'partner')
+                {{-- Conversion tracking: fires once on a successful partner application --}}
+                <script>
+                    if (typeof fbq === 'function') fbq('track', 'Lead');
+                    window.dataLayer = window.dataLayer || [];
+                    window.dataLayer.push({ event: 'generate_lead', form_type: 'partner' });
+                </script>
+                @endif
+
+                @if($errors->any())
+                <div class="bg-error/10 text-error p-4 rounded-xl mb-6 text-sm">Please check the form and try again.</div>
+                @endif
+
+                <form action="/leads" method="POST" class="space-y-5">
+                    @csrf
+                    <input type="hidden" name="form_type" value="partner">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-1.5">First Name *</label>
+                            <input type="text" name="first_name" value="{{ old('first_name') }}" required class="w-full px-4 py-3 rounded-lg border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none text-sm" placeholder="John">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-1.5">Last Name *</label>
+                            <input type="text" name="last_name" value="{{ old('last_name') }}" required class="w-full px-4 py-3 rounded-lg border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none text-sm" placeholder="Doe">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-1.5">Work Email *</label>
+                        <input type="email" name="email" value="{{ old('email') }}" required class="w-full px-4 py-3 rounded-lg border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none text-sm" placeholder="john@company.com">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-1.5">Company *</label>
+                        <input type="text" name="company" value="{{ old('company') }}" required class="w-full px-4 py-3 rounded-lg border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none text-sm" placeholder="Your Company">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-1.5">Partnership Type *</label>
+                        <select name="role" required class="w-full px-4 py-3 rounded-lg border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none text-sm text-text-secondary">
+                            <option value="">Select partnership type</option>
+                            <option>Consulting Partner</option>
+                            <option>Technology Partner</option>
+                            <option>Reseller Partner</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-1.5">Phone</label>
+                        <input type="tel" name="phone" value="{{ old('phone') }}" class="w-full px-4 py-3 rounded-lg border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none text-sm" placeholder="+234 ...">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-1.5">Tell us about your organisation</label>
+                        <textarea name="message" rows="3" class="w-full px-4 py-3 rounded-lg border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none text-sm resize-none" placeholder="Your market, clients, and how you'd like to partner...">{{ old('message') }}</textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-accent hover:bg-accent-light text-white font-bold py-4 rounded-xl transition-all shadow-lg text-base">Submit Application</button>
+                    <p class="text-xs text-text-secondary text-center">By submitting, you agree to our <a href="/legal/privacy" class="underline">Privacy Policy</a>.</p>
+                </form>
+            </div>
+        </div>
+    </section>
 </x-app-layout>
