@@ -46,8 +46,8 @@
     <meta property="og:image" content="{{ $ogImage ?? asset('images/placeholders/og-default.jpg') }}">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="icon" type="image/png" sizes="512x512" href="{{ asset('favicon.png') }}">
-    <link rel="apple-touch-icon" href="{{ asset('favicon.png') }}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('favicon-96x96.png') }}?v=2">
+    <link rel="apple-touch-icon" href="{{ asset('favicon-96x96.png') }}?v=2">
     {{-- Self-hosted Fedra Sans: preload the two cuts used above the fold --}}
     <link rel="preload" as="font" type="font/woff2" crossorigin
           href="{{ asset('fonts/fedra-sans/FedraSansStd-BookLF.woff2') }}">

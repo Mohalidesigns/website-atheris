@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ $title ?? 'Admin' }} — Atheris CMS</title>
-    <link rel="icon" type="image/png" sizes="512x512" href="{{ asset('favicon.png') }}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('favicon-96x96.png') }}?v=2">
     {{-- Self-hosted Fedra Sans: preload the two cuts used above the fold --}}
     <link rel="preload" as="font" type="font/woff2" crossorigin
           href="{{ asset('fonts/fedra-sans/FedraSansStd-BookLF.woff2') }}">
