@@ -29,7 +29,6 @@
                 @if(session('lead_form_type') === 'partner')
                 {{-- Conversion tracking: fires once on a successful partner application --}}
                 <script>
-                    if (typeof fbq === 'function') fbq('track', 'Lead');
                     window.dataLayer = window.dataLayer || [];
                     window.dataLayer.push({ event: 'generate_lead', form_type: 'partner' });
                 </script>

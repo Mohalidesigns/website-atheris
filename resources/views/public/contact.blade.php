@@ -42,7 +42,6 @@
                     @if(session('lead_form_type') === 'contact')
                     {{-- Conversion tracking: fires once on a successful contact submission --}}
                     <script>
-                        if (typeof fbq === 'function') fbq('track', 'Lead');
                         window.dataLayer = window.dataLayer || [];
                         window.dataLayer.push({ event: 'generate_lead', form_type: 'contact' });
                     </script>
