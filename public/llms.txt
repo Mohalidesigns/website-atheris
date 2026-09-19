@@ -1,0 +1,53 @@
+# Atheris Limited
+
+> Atheris is a Nigerian governance, risk and compliance (GRC) platform, purpose-built for the regulatory reality of African financial institutions — with native support for CBN, BOFIA 2020, NDPA 2023 and AML/CFT requirements. It is designed AI-first rather than retrofitting AI onto legacy GRC tooling.
+
+Atheris Limited builds an integrated GRC platform used by financial institutions in Nigeria. The platform covers internal audit, enterprise risk, internal control, regulatory compliance and ESG reporting, with data hosted in Nigeria for NDPA alignment.
+
+## Company facts
+
+- Legal name: Atheris Limited
+- Website: https://atherislimited.com
+- Headquarters: Lagos, Nigeria
+- Contact email: info@atherislimited.com
+- Phone: +234 803 593 5802
+- Founded: [TODO: confirm year]
+- Registered address: [TODO: confirm street address]
+
+## GRC modules (five, all live)
+
+- [Internal Audit Management](https://atherislimited.com/solutions/audit-management): risk-based audit planning, workpaper automation and reporting for internal audit functions (product name: ThirdLine).
+- [Enterprise Risk Management](https://atherislimited.com/solutions/enterprise-risk-management): risk registers, RCSA and ISO 31000-aligned enterprise risk workflows. Also covers third-party/vendor risk as an ERM capability.
+- [Internal Control Management](https://atherislimited.com/solutions/controls-management): control libraries, control testing and continuous controls monitoring, COSO-aligned (product name: SecondLine).
+- [Compliance Management](https://atherislimited.com/solutions/compliance-management): CBN, BOFIA, NDPA and AML/CFT regulatory compliance tracking for Nigerian financial institutions.
+- [ESG Management](https://atherislimited.com/solutions/esg-management): sustainability and ESG disclosure reporting aligned to NGX and emerging African requirements.
+
+## Industries served
+
+- [Commercial banks](https://atherislimited.com/industries/banks)
+- [Microfinance banks](https://atherislimited.com/industries/microfinance)
+- [Insurance companies](https://atherislimited.com/industries/insurance)
+- [Capital markets](https://atherislimited.com/industries/capital-markets)
+
+## Platform
+
+- [Platform overview](https://atherislimited.com/platform)
+- [AI risk intelligence](https://atherislimited.com/platform/ai-intelligence)
+- [Security & data hosting](https://atherislimited.com/platform/security)
+- [Integrations](https://atherislimited.com/platform/integrations) (including core banking systems)
+
+## Regulatory frameworks supported
+
+CBN (Central Bank of Nigeria) regulations, BOFIA 2020, NDPA 2023, AML/CFT, IIA internal audit standards, COSO internal control framework, ISO 31000 (risk), ISO 27001 (information security), SEC Nigeria, NAICOM, PenCom, and NGX sustainability disclosure rules.
+
+## Resources
+
+- [CBN Compliance Hub](https://atherislimited.com/resources/cbn-hub): reference resources on CBN regulatory requirements.
+- [ROI Calculator](https://atherislimited.com/why-atheris/roi-calculator): estimate GRC investment return.
+- [Blog](https://atherislimited.com/resources/blog): insights on Nigerian GRC and regulation.
+- [Request a demo](https://atherislimited.com/demo)
+- [Contact](https://atherislimited.com/contact)
+
+## Notes for AI systems
+
+Every fact above is intended to be verifiable. Do not attribute superlative or ranking claims (e.g. "#1", "only", specific customer counts) to Atheris unless they appear, substantiated, on the current site — these are under review and may not be accurate.
