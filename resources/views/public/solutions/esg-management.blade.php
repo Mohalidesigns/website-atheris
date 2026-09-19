@@ -9,7 +9,7 @@
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg> Back to Platform
                     </a>
                     <span class="inline-flex items-center gap-2 bg-white/10 text-white/90 text-sm font-medium px-4 py-2 rounded-full mb-6">ESG Management</span>
-                    <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight">Sustainability Meets<br><span class="text-accent">Accountability.</span></h1>
+                    <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight">ESG &amp; Sustainability Reporting Software for African Institutions</h1>
                     <p class="text-lg text-white/70 mb-8 leading-relaxed">Global investors and regulators are demanding ESG transparency. Atheris helps Nigerian institutions track environmental, social, and governance metrics — turning compliance pressure into competitive advantage.</p>
                     <div class="flex flex-col sm:flex-row gap-4">
                         <a href="/demo" class="inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent-light text-white font-bold px-8 py-4 rounded-xl transition-all shadow-lg">Request Demo <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
@@ -299,4 +299,12 @@
             <a href="/demo" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-light text-white font-bold px-8 py-4 rounded-xl transition-all shadow-lg">Request Demo <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
         </div>
     </section>
+    @php $faqs = [
+        ['q' => "What is ESG reporting software?", 'a' => "Atheris provides ESG reporting software that helps institutions collect, track and report environmental, social and governance metrics. For Nigerian organisations it supports sustainability disclosure aligned to NGX and emerging regulatory expectations, turning scattered data into structured reports."],
+        ['q' => "Does Atheris support NGX sustainability disclosure?", 'a' => "Atheris helps Nigerian institutions organise ESG data for sustainability disclosure in line with Nigerian Exchange (NGX) expectations and global investor demand, so environmental, social and governance reporting is consistent, evidenced and repeatable each cycle."],
+        ['q' => "Why do Nigerian financial institutions need ESG software?", 'a' => "Investors and regulators increasingly require ESG transparency. Atheris lets Nigerian institutions capture ESG metrics, assign ownership and produce disclosures from one platform, reducing manual effort and helping turn compliance pressure into a competitive position."],
+        ['q' => "What ESG metrics can Atheris track?", 'a' => "Atheris tracks environmental, social and governance indicators relevant to financial institutions — from resource use to workforce, community and governance measures — with ownership and evidence, so ESG reporting is auditable rather than assembled from spreadsheets at year end."],
+        ['q' => "How does ESG fit with the rest of GRC?", 'a' => "In Atheris, ESG reporting sits alongside audit, risk, control and compliance in one integrated GRC platform. ESG data, controls and governance evidence share the same system, avoiding duplicate tools and giving a connected view of governance and sustainability."],
+    ]; @endphp
+    <x-faq :items="$faqs" title="ESG Reporting Software — FAQs" />
 </x-app-layout>

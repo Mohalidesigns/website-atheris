@@ -1,4 +1,7 @@
 <x-app-layout>
+    {{-- Single keyword-bearing H1 for the homepage (the rotating hero slide titles
+         are H2s). Visually hidden so the slider design is unchanged (G4). --}}
+    <h1 class="sr-only">AI-First GRC Software for Africa's Financial Institutions</h1>
     {{-- ===== HERO SECTION (Carousel) ===== --}}
     @php
         $heroSlides = json_decode(App\Models\Setting::get('hero_slides', '[]'), true) ?: [[
@@ -32,7 +35,7 @@
                         {{ $slide['badge'] }}
                     </div>
                     @endif
-                    <h1 class="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-extrabold text-white leading-[1.1] mb-6">{!! nl2br(e($slide['title'])) !!}</h1>
+                    <h2 class="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-extrabold text-white leading-[1.1] mb-6">{!! nl2br(e($slide['title'])) !!}</h2>
                     <p class="text-lg lg:text-xl text-white/70 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed">{{ $slide['subtitle'] }}</p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                         @if(!empty($slide['cta_text']))

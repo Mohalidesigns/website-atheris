@@ -8,7 +8,7 @@
                     <a href="/platform" class="inline-flex items-center gap-2 text-white/60 text-sm mb-6 hover:text-white transition">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg> Back to Platform
                     </a>
-                    <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight">{{ $solution->tagline }}</h1>
+                    <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight">Enterprise Risk Management Software for African Financial Institutions</h1>
                     <p class="text-lg text-white/70 mb-8 leading-relaxed">{{ $solution->description }}</p>
                     <div class="flex flex-col sm:flex-row gap-4">
                         <a href="/demo" class="inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent-light text-white font-bold px-8 py-4 rounded-xl transition-all shadow-lg">Request Demo <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
@@ -254,4 +254,12 @@
             <a href="/demo" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-light text-white font-bold px-8 py-4 rounded-xl transition-all shadow-lg">Request Demo <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
         </div>
     </section>
+    @php $faqs = [
+        ['q' => "What is enterprise risk management software?", 'a' => "Atheris provides enterprise risk management (ERM) software that centralises risk registers, risk-and-control self-assessments (RCSA) and treatment plans. It gives African financial institutions a single view of enterprise risk aligned to ISO 31000, replacing fragmented spreadsheets."],
+        ['q' => "Does Atheris support ISO 31000?", 'a' => "Yes. Atheris structures risk identification, assessment, treatment and monitoring in line with the ISO 31000 risk management framework, so institutions can operate a consistent, defensible enterprise risk process and report risk posture to the board and regulators."],
+        ['q' => "Does Atheris cover third-party or vendor risk?", 'a' => "Yes. Atheris treats third-party and vendor risk as part of enterprise risk management rather than a separate tool, letting institutions assess, score and monitor supplier and outsourcing risk alongside their wider risk register."],
+        ['q' => "What is a risk register and does Atheris provide one?", 'a' => "A risk register is the central record of an institution's risks, their owners, ratings and controls. Atheris provides a live, structured risk register with RCSA workflows, so risks are assessed consistently and tracked over time rather than kept in static documents."],
+        ['q' => "How does ERM support CBN expectations?", 'a' => "The Central Bank of Nigeria expects institutions to manage operational and enterprise risk formally. Atheris helps evidence this by documenting risks, controls, assessments and treatment actions in one auditable system that can be shown during supervisory reviews."],
+    ]; @endphp
+    <x-faq :items="$faqs" title="Enterprise Risk Management — FAQs" />
 </x-app-layout>

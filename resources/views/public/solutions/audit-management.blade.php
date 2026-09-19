@@ -15,7 +15,7 @@
                     <img src="{{ asset('images/thridLine-presentation.png') }}" alt="ThirdLine" class="h-12 md:h-14 object-contain">
                 </div>
                 <p class="text-white/50 text-sm font-medium uppercase tracking-widest mb-6">By Atheris Limited</p>
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight max-w-4xl mx-auto">The Intelligent<br>Internal Audit Solution</h1>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight max-w-4xl mx-auto">Internal Audit Management Software for Nigerian Banks</h1>
                 <p class="text-xl text-accent font-semibold mb-4">Efficiency. Visibility. Non-Repudiation.</p>
                 <p class="text-lg text-white/70 max-w-3xl mx-auto mb-10 leading-relaxed">ThirdLine is a purpose-built internal audit management platform for financial institutions and regulated industries. It automates the entire audit lifecycle — from risk-based planning and fieldwork to AI-powered observations and CBN-ready reports — all from one unified portal.</p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -482,4 +482,12 @@
             </div>
         </div>
     </section>
+    @php $faqs = [
+        ['q' => "What is internal audit management software?", 'a' => "Atheris provides internal audit management software that helps audit teams plan risk-based audits, manage workpapers, track findings and report to the board from one system. For Nigerian financial institutions it aligns the audit lifecycle with IIA standards and CBN examination expectations."],
+        ['q' => "Which internal audit software do Nigerian financial institutions use?", 'a' => "Nigerian banks and other regulated institutions increasingly adopt locally-built platforms like Atheris (ThirdLine) that understand CBN and BOFIA requirements natively, rather than adapting generic international audit tools. The platform supports risk-based planning, fieldwork and examiner-ready reporting."],
+        ['q' => "Does Atheris support IIA standards?", 'a' => "Yes. Atheris structures the internal audit workflow — risk assessment, planning, fieldwork, workpapers and reporting — around the Institute of Internal Auditors (IIA) International Professional Practices Framework, so audit functions can evidence conformance while working in the platform."],
+        ['q' => "How does AI help internal audit?", 'a' => "In Atheris, AI assists auditors by helping draft observations, surface anomalies and speed up documentation, while a human auditor keeps control of judgement. This reduces manual effort on repetitive tasks so audit teams can focus on risk analysis and assurance."],
+        ['q' => "Can Atheris map audit work to CBN requirements?", 'a' => "Atheris is built for the Nigerian regulatory context, so audit plans, controls and reports can be organised against CBN circulars and examination themes. This helps internal audit demonstrate regulatory coverage and prepare examiner-ready outputs for the Central Bank of Nigeria."],
+    ]; @endphp
+    <x-faq :items="$faqs" title="Internal Audit Software — FAQs" />
 </x-app-layout>

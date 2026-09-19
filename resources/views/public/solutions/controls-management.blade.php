@@ -21,7 +21,7 @@
                     <span class="text-white font-extrabold text-3xl md:text-4xl tracking-tight">SecondLine</span>
                 </div>
                 <p class="text-white/50 text-sm font-medium uppercase tracking-widest mb-6">Atheris Control Solution</p>
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight max-w-4xl mx-auto">Every control tested.<br>Every exception closed.</h1>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight max-w-4xl mx-auto">Internal Control &amp; Continuous Controls Monitoring Software</h1>
                 <p class="text-xl text-accent font-semibold mb-4">Nothing lost in a spreadsheet.</p>
                 <p class="text-lg text-white/70 max-w-3xl mx-auto mb-10 leading-relaxed">SecondLine is the control testing and exception management platform for banks, mortgage banks, microfinance banks, and fintechs. Define your controls once, test them on a schedule, and chase every exception to verified closure.</p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -370,4 +370,12 @@
             </div>
         </div>
     </section>
+    @php $faqs = [
+        ['q' => "What is internal control management software?", 'a' => "Atheris provides internal control management software that lets institutions define a control library, test controls on a schedule and track every exception to verified closure. It replaces spreadsheets with a monitored workflow, supporting COSO-aligned internal control programmes for banks and fintechs."],
+        ['q' => "What is continuous controls monitoring?", 'a' => "Continuous controls monitoring is the practice of testing key controls on a recurring schedule rather than once a year. Atheris (SecondLine) automates this cadence, flags failed or overdue tests, and routes exceptions to owners so control weaknesses are found and closed sooner."],
+        ['q' => "Does Atheris align to the COSO framework?", 'a' => "Yes. Atheris organises control definitions, testing and exception management in a way that supports the COSO internal control framework, helping banks, microfinance banks and fintechs evidence that controls are designed, operating and monitored effectively."],
+        ['q' => "Who uses internal control software in Nigeria?", 'a' => "Commercial banks, mortgage banks, microfinance banks and fintechs use internal control software to manage control testing and exceptions under CBN oversight. Atheris is built for these institutions, letting control and compliance teams work from a single, auditable system."],
+        ['q' => "How is exception management handled?", 'a' => "In Atheris, every failed control test raises an exception with an owner, due date and evidence trail. The platform chases exceptions to verified closure so nothing is lost in email or spreadsheets, giving management a live view of open control issues."],
+    ]; @endphp
+    <x-faq :items="$faqs" title="Internal Control Software — FAQs" />
 </x-app-layout>

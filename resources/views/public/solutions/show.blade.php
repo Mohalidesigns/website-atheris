@@ -1,5 +1,11 @@
 <x-app-layout :metaTitle="$solution->meta_title ?? $solution->title . ' — Atheris GRC'" :metaDescription="$solution->meta_description ?? $solution->description">
     @push('head') @include('partials.schema-software') @endpush
+    @php
+        // Keyword-bearing H1 per slug (G4); falls back to the solution title.
+        $pageH1 = [
+            'compliance-management' => 'Regulatory Compliance Management Software for Nigerian Banks',
+        ][$solution->slug] ?? $solution->title;
+    @endphp
     {{-- Hero --}}
     <section class="bg-gradient-hero py-20 lg:py-28">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -8,7 +14,7 @@
                     <a href="/platform" class="inline-flex items-center gap-2 text-white/60 text-sm mb-6 hover:text-white transition">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg> Back to Platform
                     </a>
-                    <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight">{{ $solution->tagline }}</h1>
+                    <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight">{{ $pageH1 }}</h1>
                     <p class="text-lg text-white/70 mb-8 leading-relaxed">{{ $solution->description }}</p>
                     <div class="flex flex-col sm:flex-row gap-4">
                         <a href="/demo" class="inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent-light text-white font-bold px-8 py-4 rounded-xl transition-all shadow-lg">Request Demo <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
@@ -137,4 +143,17 @@
             <a href="/demo" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-light text-white font-bold px-8 py-4 rounded-xl transition-all shadow-lg">Request Demo <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
         </div>
     </section>
+    @php
+        $faqsBySlug = [
+            'compliance-management' => [
+                ['q' => "What is regulatory compliance management software?", 'a' => "Atheris provides compliance management software that helps Nigerian financial institutions track regulatory obligations, map them to controls and evidence, and monitor compliance status. It covers CBN, BOFIA, NDPA and AML/CFT requirements from a single system."],
+                ['q' => "How does Atheris support CBN compliance?", 'a' => "Atheris is built around Nigerian regulation, so institutions can record CBN obligations, link them to controls and tasks, and track completion. This helps compliance teams demonstrate coverage of Central Bank of Nigeria requirements and prepare for supervisory examinations."],
+                ['q' => "Does Atheris help with NDPA 2023?", 'a' => "Yes. The Nigeria Data Protection Act (NDPA) 2023 requires institutions to govern personal data. Atheris helps map NDPA obligations to controls and evidence, and hosts data in Nigeria, supporting data-protection compliance alongside other regulatory frameworks."],
+                ['q' => "Does Atheris support AML/CFT compliance?", 'a' => "Atheris helps institutions document and monitor anti-money-laundering and combating-the-financing-of-terrorism (AML/CFT) obligations as part of a broader compliance programme, linking requirements to controls, tasks and evidence within the same GRC platform."],
+                ['q' => "What does BOFIA 2020 require and how does Atheris help?", 'a' => "The Banks and Other Financial Institutions Act (BOFIA) 2020 sets governance and prudential obligations for Nigerian banks. Atheris helps institutions capture these obligations, connect them to controls and reporting, and maintain an auditable record of compliance activity."],
+            ],
+        ];
+        $faqs = $faqsBySlug[$solution->slug] ?? [];
+    @endphp
+    <x-faq :items="$faqs" title="Compliance Management — FAQs" />
 </x-app-layout>
