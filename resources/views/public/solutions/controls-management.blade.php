@@ -1,4 +1,5 @@
 <x-app-layout :metaTitle="$solution->meta_title ?? 'Control Testing & Exception Management Software for Banks | SecondLine by Atheris'" :metaDescription="$solution->meta_description ?? 'Define, test, and rate internal controls, and track every exception to verified closure. Built for banks, microfinance banks, and fintechs in Nigeria and across Africa.'">
+    @push('head') @include('partials.schema-software') @endpush
 
     @php
         $ss = $solution->screenshots ?? [];

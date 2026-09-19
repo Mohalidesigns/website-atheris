@@ -74,6 +74,9 @@
     {{-- Navigation --}}
     @include('partials.navigation')
 
+    {{-- Breadcrumbs (auto-derived from path; hidden on homepage) + BreadcrumbList schema --}}
+    @include('partials.breadcrumbs')
+
     {{-- Main Content --}}
     <main>
         {{ $slot }}
