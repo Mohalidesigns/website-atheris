@@ -7,6 +7,12 @@ use App\Models\Solution;
 
 class SolutionController extends Controller
 {
+    public function index()
+    {
+        $solutions = Solution::published()->get();
+        return view('public.solutions.index', compact('solutions'));
+    }
+
     public function show(string $slug)
     {
         $solution = Solution::where('slug', $slug)->where('status', 'published')->firstOrFail();

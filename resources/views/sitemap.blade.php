@@ -3,6 +3,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     <url><loc>{{ url('/') }}</loc><lastmod>{{ $lm }}</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
     <url><loc>{{ url('/platform') }}</loc><lastmod>{{ $lm }}</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+    <url><loc>{{ url('/solutions') }}</loc><lastmod>{{ $lm }}</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
     <url><loc>{{ url('/platform/ai-intelligence') }}</loc><lastmod>{{ $lm }}</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
     <url><loc>{{ url('/platform/security') }}</loc><lastmod>{{ $lm }}</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
     <url><loc>{{ url('/platform/integrations') }}</loc><lastmod>{{ $lm }}</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>

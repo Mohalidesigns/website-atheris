@@ -49,6 +49,6 @@ Rule: **one primary keyword per URL** — before adding a page, check here for c
 ## Blog posts (live)
 `/resources/blog/understanding-bofia-2020` · `/resources/blog/ai-transforming-audit` · `/resources/blog/ndpa-compliance-checklist` — confirm target keyword per post in the content calendar.
 
-## Gaps / opportunities (not yet built)
-- `/solutions` hub — targets *GRC modules / GRC suite Nigeria* (internal-link hub for the five modules). Currently absent.
-- `/pricing` — *how much does GRC software cost in Nigeria* is high-intent with no landing page. Decision required.
+## Gaps / opportunities
+- ✅ `/solutions` hub — **built** (targets *GRC modules / GRC suite Nigeria*; module grid + FAQ; linked from nav "All Solutions" and breadcrumbs).
+- `/pricing` — *how much does GRC software cost in Nigeria* is high-intent with no landing page. Decision required (deferred).

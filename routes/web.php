@@ -31,6 +31,7 @@ Route::redirect('/secondline', '/solutions/controls-management', 301)->name('sec
 // wildcard so they win over the SolutionController 404).
 Route::redirect('/solutions/incident-management', '/platform', 301);
 Route::redirect('/solutions/business-continuity', '/platform', 301);
+Route::get('/solutions', [SolutionController::class, 'index'])->name('solutions.index');
 Route::get('/solutions/{slug}', [SolutionController::class, 'show'])->name('solutions.show');
 Route::get('/industries/{slug}', [PageController::class, 'industry'])->name('industries.show');
 Route::get('/why-atheris', [PageController::class, 'whyAtheris'])->name('why.index');

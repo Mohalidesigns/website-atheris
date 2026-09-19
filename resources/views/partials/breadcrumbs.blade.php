@@ -23,7 +23,7 @@
     ];
     // Grouping-only segments with no landing page — omitted from the trail entirely
     // (a breadcrumb item without a real URL fails Google's BreadcrumbList validation).
-    $__noHub = ['solutions', 'industries', 'resources', 'legal', 'category'];
+    $__noHub = ['industries', 'resources', 'legal', 'category'];
 
     $__crumbs = [];
     if ($__path !== '' && $__path !== '/') {
