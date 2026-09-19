@@ -26,6 +26,8 @@
     <title>{{ $__title }}</title>
     <meta name="description" content="{{ $__desc }}">
     <link rel="canonical" href="{{ $__canonical }}">
+    <link rel="alternate" hreflang="en-NG" href="{{ $__canonical }}">
+    <link rel="alternate" hreflang="x-default" href="{{ $__canonical }}">
     @if($__noindex)
     <meta name="robots" content="noindex,nofollow">
     @else

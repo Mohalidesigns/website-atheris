@@ -37,4 +37,8 @@ return [
 
     'locale' => 'en-NG',
 
+    // Sitemap <lastmod> for static pages. Bump when static page content changes
+    // materially (dynamic pages use their own updated_at).
+    'content_updated' => '2026-09-19',
+
 ];
