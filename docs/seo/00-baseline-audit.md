@@ -97,7 +97,7 @@ The prompt was written against an earlier state. Several items are **already don
 | G9 | Flat sitemap, no `lastmod` on core pages, no image sitemap/index | ✅ | Medium |
 | G10 | Slugs use internal naming vs search-demand naming | ✅ | Medium — decision required (§5.10) |
 | G12 | No canonical / robots-meta / hreflang | ✅ | High |
-| — | ~20 of 38 public `<img>` tags missing `alt` | ✅ | Medium |
+| — | ~~~20 of 38 public `<img>` tags missing `alt`~~ **CORRECTED: false positive** — the grep was truncated by `->` in Blade expressions. All 42 public `<img>` tags carry `alt` (dynamic ones use model title/name). Coverage complete; only marginal quality tuning possible. | ✅ | Resolved |
 
 ## 8. Decisions I need before implementing (checkpoints)
 
