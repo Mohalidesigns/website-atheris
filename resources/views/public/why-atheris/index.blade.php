@@ -191,4 +191,13 @@
             </div>
         </div>
     </section>
+
+    @php $faqs = [
+        ['q' => "Why choose a Nigerian GRC vendor over an international platform?", 'a' => "A Nigerian GRC vendor understands local regulation natively. Atheris is built around CBN, BOFIA and NDPA requirements rather than adapting a generic international tool, so Nigerian institutions get relevant workflows, local data hosting and support that reflects their regulatory reality."],
+        ['q' => "What makes Atheris different from other GRC software?", 'a' => "Atheris is an AI-first, integrated GRC platform designed for African financial institutions. It combines audit, risk, control, compliance and ESG in one system built for Nigerian regulation, rather than bolting AI or local rules onto a legacy international product."],
+        ['q' => "Is Atheris suitable for African financial institutions beyond Nigeria?", 'a' => "Atheris is built for African financial institutions, with the deepest support for Nigerian regulation (CBN, BOFIA, NDPA). Its GRC modules — audit, risk, control, compliance and ESG — apply across African markets, with Nigerian frameworks supported natively."],
+        ['q' => "Where is Atheris data hosted?", 'a' => "Atheris hosts data in Nigeria, supporting NDPA 2023 data-residency expectations. For financial institutions concerned about where regulated data lives, local hosting is a practical advantage over platforms that store data offshore."],
+        ['q' => "How does AI-first GRC differ from GRC with AI features added?", 'a' => "AI-first GRC is designed around automation and intelligence from the start, rather than adding AI features to legacy software. In Atheris, AI supports tasks like drafting observations and surfacing risk, keeping human judgement in control while reducing manual effort."],
+    ]; @endphp
+    <x-faq :items="$faqs" title="Why Atheris — FAQs" />
 </x-app-layout>

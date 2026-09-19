@@ -15,4 +15,13 @@
             @endforeach
         </div>
     </div></section>
+
+    @php $faqs = [
+        ['q' => "What are CBN compliance requirements for Nigerian banks?", 'a' => "The Central Bank of Nigeria issues circulars and guidelines covering governance, risk, AML/CFT, data and prudential obligations for banks and other financial institutions. Atheris helps institutions track these requirements, link them to controls, and evidence compliance in one system."],
+        ['q' => "How can institutions prepare for a CBN examination?", 'a' => "Preparing for a CBN examination means having controls, risks and compliance evidence organised and current. Atheris centralises this information so institutions can demonstrate coverage of Central Bank of Nigeria requirements and produce examiner-ready reports quickly."],
+        ['q' => "What is the CBN Compliance Hub?", 'a' => "The Atheris CBN Compliance Hub is a resource that helps Nigerian financial institutions understand Central Bank of Nigeria regulatory requirements. It supports compliance teams working to map obligations to controls and maintain examination readiness."],
+        ['q' => "Does Atheris cover BOFIA 2020 and NDPA 2023 alongside CBN circulars?", 'a' => "Yes. Beyond CBN circulars, Atheris helps institutions manage obligations under BOFIA 2020 and the NDPA 2023, linking each to controls and evidence so governance, prudential and data-protection requirements are handled in one platform."],
+        ['q' => "How does Atheris help with AML/CFT compliance under CBN?", 'a' => "CBN expects institutions to maintain AML/CFT programmes. Atheris helps document and monitor anti-money-laundering and counter-terrorist-financing obligations, connecting them to controls, tasks and evidence within the wider compliance framework."],
+    ]; @endphp
+    <x-faq :items="$faqs" title="CBN Compliance — FAQs" />
 </x-app-layout>
