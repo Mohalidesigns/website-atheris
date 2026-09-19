@@ -3,7 +3,7 @@
 Consolidated `[TODO: confirm]` items blocking full completion. Nothing below has been asserted publicly; placeholders are used until confirmed.
 
 ## Business facts (block schema / llms.txt / NAP)
-1. **Founding year** — for `Organization.foundingDate`. Currently omitted.
+1. ~~**Founding year**~~ — ✅ **2014** (in `Organization.foundingDate` + llms.txt).
 2. **Registered street address** — for `LocalBusiness` schema + `/contact` + footer NAP. Currently only "Lagos, Nigeria".
 3. **Phone line** — publish the `+234 803 593 5802` mobile, or a landline/virtual business number? (§5.9 — a business line reads as more established to bank procurement.)
 4. **Module product names** — audit = **ThirdLine**, controls = **SecondLine** (confirmed in code). Confirm names (if any) for Enterprise Risk, Compliance, ESG modules.

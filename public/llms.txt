@@ -11,7 +11,7 @@ Atheris Limited builds an integrated GRC platform used by financial institutions
 - Headquarters: Lagos, Nigeria
 - Contact email: info@atherislimited.com
 - Phone: +234 803 593 5802
-- Founded: [TODO: confirm year]
+- Founded: 2014
 - Registered address: [TODO: confirm street address]
 
 ## GRC modules (five, all live)

@@ -25,7 +25,7 @@ return [
         'address_display'   => 'Lagos, Nigeria',         // [TODO: confirm full street address]
         // Factual, non-superlative description (see docs/seo/08-claims-register.md).
         'description' => 'Atheris is a Nigerian governance, risk and compliance (GRC) platform purpose-built for CBN, BOFIA 2020 and NDPA 2023 compliance for African financial institutions.',
-        // 'foundingDate' => null, // [TODO: confirm year]
+        'foundingDate' => '2014',
         // 'streetAddress' => null, // [TODO: confirm registered address]
         'sameAs'      => [
             'https://www.linkedin.com/company/atheris-limitedng',

@@ -21,6 +21,9 @@
         'areaServed'  => ['@type' => 'Country', 'name' => 'Nigeria'],
         'sameAs'      => array_values($org['sameAs']),
     ];
+    if (!empty($org['foundingDate'])) {
+        $organization['foundingDate'] = $org['foundingDate'];
+    }
 
     $website = [
         '@type'      => 'WebSite',
