@@ -21,35 +21,37 @@
         'banks' => 'Commercial Banks', 'microfinance' => 'Microfinance Banks',
         'insurance' => 'Insurance Companies', 'capital-markets' => 'Capital Markets',
     ];
-    // Segments that are grouping-only and have no landing page of their own.
+    // Grouping-only segments with no landing page — omitted from the trail entirely
+    // (a breadcrumb item without a real URL fails Google's BreadcrumbList validation).
     $__noHub = ['solutions', 'industries', 'resources', 'legal', 'category'];
 
     $__crumbs = [];
     if ($__path !== '' && $__path !== '/') {
         $__segments = explode('/', $__path);
         $__acc = '';
-        $__count = count($__segments);
-        foreach ($__segments as $__i => $__seg) {
+        foreach ($__segments as $__seg) {
             $__acc .= '/' . $__seg;
-            $__isLast = ($__i === $__count - 1);
+            if (in_array($__seg, $__noHub)) {
+                continue; // keep accumulating the path, but don't render this crumb
+            }
             $__label = $__labels[$__seg] ?? ucwords(str_replace('-', ' ', $__seg));
-            $__url = (!$__isLast && !in_array($__seg, $__noHub)) ? url($__acc) : null;
-            $__crumbs[] = ['label' => $__label, 'url' => $__url];
+            $__crumbs[] = ['label' => $__label, 'url' => url($__acc)];
         }
     }
+    $__lastIndex = count($__crumbs) - 1;
 @endphp
 @if(!empty($__crumbs))
 <nav aria-label="Breadcrumb" class="bg-bg border-b border-border">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
         <ol class="flex flex-wrap items-center gap-2 text-sm text-text-secondary">
             <li><a href="{{ url('/') }}" class="hover:text-primary transition">Home</a></li>
-            @foreach($__crumbs as $__c)
+            @foreach($__crumbs as $__i => $__c)
                 <li aria-hidden="true" class="text-border">/</li>
                 <li>
-                    @if($__c['url'])
-                        <a href="{{ $__c['url'] }}" class="hover:text-primary transition">{{ $__c['label'] }}</a>
-                    @else
+                    @if($__i === $__lastIndex)
                         <span class="text-text-primary font-medium" aria-current="page">{{ $__c['label'] }}</span>
+                    @else
+                        <a href="{{ $__c['url'] }}" class="hover:text-primary transition">{{ $__c['label'] }}</a>
                     @endif
                 </li>
             @endforeach
@@ -57,12 +59,12 @@
     </div>
 </nav>
 @php
+    // Every ListItem carries an item URL (required by Google for non-final items;
+    // valid on the final item too), so the trail passes Rich Results validation.
     $__items = [['@type' => 'ListItem', 'position' => 1, 'name' => 'Home', 'item' => url('/')]];
     $__pos = 2;
     foreach ($__crumbs as $__c) {
-        $__li = ['@type' => 'ListItem', 'position' => $__pos, 'name' => $__c['label']];
-        if ($__c['url']) { $__li['item'] = $__c['url']; }
-        $__items[] = $__li;
+        $__items[] = ['@type' => 'ListItem', 'position' => $__pos, 'name' => $__c['label'], 'item' => $__c['url']];
         $__pos++;
     }
     $__bcLd = ['@context' => 'https://schema.org', '@type' => 'BreadcrumbList', 'itemListElement' => $__items];
