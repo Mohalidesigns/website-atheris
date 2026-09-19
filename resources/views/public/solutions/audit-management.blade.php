@@ -1,4 +1,5 @@
 <x-app-layout :metaTitle="$solution->meta_title ?? 'ThirdLine — Intelligent Internal Audit Solution | Atheris GRC'" :metaDescription="$solution->meta_description ?? $solution->description">
+    @push('head') @include('partials.schema-software') @endpush
 
     @php $pc = $solution->page_content ?? []; $ss = $solution->screenshots ?? []; @endphp
 

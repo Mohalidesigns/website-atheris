@@ -1,4 +1,5 @@
 <x-app-layout :metaTitle="$solution->meta_title ?? 'ESG Management Software — Atheris GRC'" :metaDescription="$solution->meta_description ?? $solution->description">
+    @push('head') @include('partials.schema-software') @endpush
     {{-- Hero --}}
     <section class="bg-gradient-hero py-20 lg:py-28">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

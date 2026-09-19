@@ -1,2 +1,47 @@
+# robots.txt — atherislimited.com
+# Atheris Limited — AI-first Governance, Risk & Compliance platform (Nigeria)
+
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /ath-admin
+Disallow: /ath-admin/
+
+# ---------------------------------------------------------------------------
+# AI / LLM crawlers — explicitly allowed.
+# Rationale: for an AI-first GRC vendor, being citable in AI assistants and
+# answer engines is a strategic acquisition channel (see /llms.txt).
+# Trade-off: allowing these also permits content to be used in model training
+# and generated answers. [TODO: confirm with Mohammed — set to Disallow if the
+# training trade-off is not wanted; answer-engine visibility would drop.]
+# ---------------------------------------------------------------------------
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+Sitemap: https://atherislimited.com/sitemap.xml

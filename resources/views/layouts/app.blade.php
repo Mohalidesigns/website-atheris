@@ -1,33 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9RENV54SEC"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-9RENV54SEC');
-    </script>
-
-    <!-- Meta Pixel Code -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1115892094345456');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1115892094345456&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
-
+    {{-- Tracking is GTM-only. GA4 and the Meta Pixel are deployed as tags INSIDE
+         the GTM container (GTM-59B4JQCC) — do NOT hard-code gtag/fbq here or they
+         will double-fire. Page events are pushed to dataLayer; GTM tags consume them. --}}
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -62,21 +38,12 @@
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-    {{-- Google Analytics --}}
-    @if(App\Models\Setting::get('ga_tracking_id'))
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{ App\Models\Setting::get('ga_tracking_id') }}"></script>
-    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','{{ App\Models\Setting::get('ga_tracking_id') }}');</script>
-    @endif
+    {{-- GA4, GTM and the Meta Pixel are managed in the GTM container (see top of
+         head). The old Setting-driven gtag/gtm/pixel injectors were removed to
+         guarantee a single tracking source and avoid double-firing. --}}
 
-    {{-- Google Tag Manager --}}
-    @if(App\Models\Setting::get('gtm_id'))
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','{{ App\Models\Setting::get('gtm_id') }}');</script>
-    @endif
-
-    {{-- Facebook Pixel --}}
-    @if(App\Models\Setting::get('fb_pixel_id'))
-    <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','{{ App\Models\Setting::get('fb_pixel_id') }}');fbq('track','PageView');</script>
-    @endif
+    {{-- Structured data: sitewide Organization + WebSite entity graph (G6) --}}
+    @include('partials.schema')
 
     {{-- Custom Head Scripts --}}
     {!! App\Models\Setting::get('custom_head_scripts', '') !!}
@@ -88,10 +55,6 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-59B4JQCC"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    {{-- GTM noscript fallback --}}
-    @if(App\Models\Setting::get('gtm_id'))
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ App\Models\Setting::get('gtm_id') }}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    @endif
 
     {{-- Custom Body Scripts --}}
     {!! App\Models\Setting::get('custom_body_scripts', '') !!}
@@ -110,6 +73,9 @@
 
     {{-- Navigation --}}
     @include('partials.navigation')
+
+    {{-- Breadcrumbs (auto-derived from path; hidden on homepage) + BreadcrumbList schema --}}
+    @include('partials.breadcrumbs')
 
     {{-- Main Content --}}
     <main>
