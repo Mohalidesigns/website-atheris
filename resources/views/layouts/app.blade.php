@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en-NG" class="scroll-smooth">
 <head>
     {{-- Tracking is GTM-only. GA4 and the Meta Pixel are deployed as tags INSIDE
          the GTM container (GTM-59B4JQCC) — do NOT hard-code gtag/fbq here or they
@@ -16,13 +16,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="google-site-verification" content="BSAzXuk2ml-2K-9ACNiNnhLNO_TQldxpHYgO2RHO7Sg">
-    <title>{{ $metaTitle ?? 'Atheris Limited — Africa\'s AI-First GRC Platform' }}</title>
-    <meta name="description" content="{{ $metaDescription ?? 'Africa\'s only AI-first Governance, Risk & Compliance platform with native CBN, BOFIA, and NDPA compliance — purpose-built for Nigerian financial institutions.' }}">
-    <meta property="og:title" content="{{ $metaTitle ?? 'Atheris Limited' }}">
-    <meta property="og:description" content="{{ $metaDescription ?? 'Africa\'s AI-First GRC Platform' }}">
-    <meta property="og:image" content="{{ $ogImage ?? asset('images/placeholders/og-default.jpg') }}">
-    <meta property="og:type" content="website">
+    @php
+        $__title     = $metaTitle ?? "Atheris Limited — Africa's AI-First GRC Platform";
+        $__desc      = $metaDescription ?? "Africa's only AI-first Governance, Risk & Compliance platform with native CBN, BOFIA, and NDPA compliance — purpose-built for Nigerian financial institutions.";
+        $__canonical = $canonical ?? url()->current();
+        $__ogImage   = $ogImage ?? asset('images/placeholders/og-default.jpg');
+        $__noindex   = ($noindex ?? false);
+    @endphp
+    <title>{{ $__title }}</title>
+    <meta name="description" content="{{ $__desc }}">
+    <link rel="canonical" href="{{ $__canonical }}">
+    @if($__noindex)
+    <meta name="robots" content="noindex,nofollow">
+    @else
+    <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+    @endif
+    <meta name="theme-color" content="#0B1F3A">
+    <meta property="og:type" content="{{ $ogType ?? 'website' }}">
+    <meta property="og:site_name" content="Atheris Limited">
+    <meta property="og:title" content="{{ $__title }}">
+    <meta property="og:description" content="{{ $__desc }}">
+    <meta property="og:url" content="{{ $__canonical }}">
+    <meta property="og:image" content="{{ $__ogImage }}">
+    <meta property="og:image:alt" content="{{ $__title }}">
+    <meta property="og:locale" content="en_NG">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ $__title }}">
+    <meta name="twitter:description" content="{{ $__desc }}">
+    <meta name="twitter:image" content="{{ $__ogImage }}">
     <link rel="icon" href="{{ asset('favicon.ico') }}?v=2" sizes="any">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon-16x16.png') }}?v=2">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}?v=2">

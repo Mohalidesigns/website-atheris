@@ -53,4 +53,13 @@
             </div>
         </div>
     </section>
+
+    @php $faqs = [
+        ['q' => "What is a GRC platform?", 'a' => "A GRC platform unifies governance, risk and compliance work — audit, risk, controls, compliance and ESG — in one system instead of separate spreadsheets and tools. Atheris provides an integrated GRC platform for African financial institutions, built around Nigerian regulatory requirements."],
+        ['q' => "What does the Atheris GRC platform include?", 'a' => "The Atheris platform brings together internal audit, enterprise risk, internal control, compliance and ESG management. Because these modules share one system, evidence, controls and reporting are connected, giving institutions a single view of governance, risk and compliance."],
+        ['q' => "Is Atheris an integrated GRC suite?", 'a' => "Yes. Rather than point tools, Atheris is an integrated GRC suite where audit, risk, control, compliance and ESG modules work together on shared data. This reduces duplicate effort and gives management and the board a connected view across GRC."],
+        ['q' => "Where is Atheris data hosted?", 'a' => "Atheris hosts data in Nigeria, supporting NDPA 2023 data-residency expectations for financial institutions. Data hosting and security are covered on the platform's security page, which describes how institutional data is protected."],
+        ['q' => "Can the platform integrate with core banking systems?", 'a' => "Atheris is designed to integrate with the systems institutions already run, including core banking platforms, so GRC data can connect to operational sources. Integration options are covered on the platform's integrations page."],
+    ]; @endphp
+    <x-faq :items="$faqs" title="GRC Platform — FAQs" />
 </x-app-layout>
