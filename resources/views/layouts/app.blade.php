@@ -40,8 +40,10 @@
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('consent', 'revoke');
     fbq('init', '1115892094345456');
-    fbq('track', 'PageView');
+    // Grant BEFORE tracking so returning visitors who already accepted send
+    // normally; new / "Essential Only" visitors stay revoked (PageView held).
     try { if (localStorage.getItem('cookie_consent') === 'all') { fbq('consent', 'grant'); } } catch (e) {}
+    fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1115892094345456&ev=PageView&noscript=1"
