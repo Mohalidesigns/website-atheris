@@ -50,6 +50,7 @@ Route::middleware('products.enabled')->group(function () {
     Route::get('/software-solutions/career-portal', [PageController::class, 'careerPortal'])->name('software-solutions.career-portal');
 });
 Route::get('/demo', [PageController::class, 'demo'])->name('demo');
+Route::view('/demo/thank-you', 'public.demo-thank-you')->name('demo.thankyou');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/careers', [PageController::class, 'careers'])->name('careers');

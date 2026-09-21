@@ -39,7 +39,12 @@ class LeadController extends Controller
         }
 
         if ($request->wantsJson()) {
-            return response()->json(['success' => true, 'message' => 'Thank you! We will be in touch shortly.']);
+            return response()->json(['success' => true, 'message' => 'Thank you! We will be in touch shortly.', 'redirect' => $validated['form_type'] === 'demo' ? route('demo.thankyou') : null]);
+        }
+
+        // Demo submissions land on a dedicated thank-you page (conversion page).
+        if ($validated['form_type'] === 'demo') {
+            return redirect()->route('demo.thankyou')->with('lead_submitted', 'demo');
         }
 
         return back()->with('success', 'Thank you! We will be in touch shortly.')->with('lead_form_type', $validated['form_type']);
