@@ -38,12 +38,17 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('consent', 'revoke');
-    fbq('init', '1115892094345456');
-    // Grant BEFORE tracking so returning visitors who already accepted send
-    // normally; new / "Essential Only" visitors stay revoked (PageView held).
-    try { if (localStorage.getItem('cookie_consent') === 'all') { fbq('consent', 'grant'); } } catch (e) {}
-    fbq('track', 'PageView');
+    (function () {
+        var granted = false;
+        try { granted = localStorage.getItem('cookie_consent') === 'all'; } catch (e) {}
+        // Only revoke for visitors who have NOT already accepted. A revoke+grant
+        // pair in the same initial queue does not flush; Meta honours a grant only
+        // as a separate later call (the "Accept All" button below). So consented
+        // returning visitors simply initialise normally and send immediately.
+        if (!granted) { fbq('consent', 'revoke'); }
+        fbq('init', '1115892094345456');
+        fbq('track', 'PageView');
+    })();
     </script>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1115892094345456&ev=PageView&noscript=1"
