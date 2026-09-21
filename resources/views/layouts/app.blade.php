@@ -1,3 +1,11 @@
+@props([
+    'metaTitle' => null,
+    'metaDescription' => null,
+    'ogImage' => null,
+    'canonical' => null,
+    'ogType' => null,
+    'noindex' => false,
+])
 <!DOCTYPE html>
 <html lang="en-NG" class="scroll-smooth">
 <head>
