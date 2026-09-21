@@ -26,14 +26,6 @@
                 <div class="bg-secondary/10 text-secondary p-4 rounded-xl mb-6 font-medium">{{ session('success') }}</div>
                 @endif
 
-                @if(session('lead_form_type') === 'partner')
-                {{-- Conversion tracking: fires once on a successful partner application --}}
-                <script>
-                    window.dataLayer = window.dataLayer || [];
-                    window.dataLayer.push({ event: 'generate_lead', form_type: 'partner' });
-                </script>
-                @endif
-
                 @if($errors->any())
                 <div class="bg-error/10 text-error p-4 rounded-xl mb-6 text-sm">Please check the form and try again.</div>
                 @endif

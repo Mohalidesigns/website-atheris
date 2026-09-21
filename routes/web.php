@@ -52,9 +52,11 @@ Route::middleware('products.enabled')->group(function () {
 Route::get('/demo', [PageController::class, 'demo'])->name('demo');
 Route::view('/demo/thank-you', 'public.demo-thank-you')->name('demo.thankyou');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
+Route::view('/contact/thank-you', 'public.contact-thank-you')->name('contact.thankyou');
 Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/careers', [PageController::class, 'careers'])->name('careers');
 Route::get('/partners', [PageController::class, 'partnersPage'])->name('partners');
+Route::view('/partners/thank-you', 'public.partner-thank-you')->name('partner.thankyou');
 Route::get('/customers', [PageController::class, 'customers'])->name('customers');
 Route::get('/legal/privacy', [PageController::class, 'privacy'])->name('legal.privacy');
 Route::get('/legal/terms', [PageController::class, 'terms'])->name('legal.terms');

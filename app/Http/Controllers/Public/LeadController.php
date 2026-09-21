@@ -38,13 +38,22 @@ class LeadController extends Controller
             Log::error('Lead email failed: ' . $e->getMessage());
         }
 
+        // Each form type has a dedicated thank-you (conversion) page.
+        $thankYouRoutes = [
+            'demo'    => 'demo.thankyou',
+            'contact' => 'contact.thankyou',
+            'partner' => 'partner.thankyou',
+        ];
+        $thankYouUrl = isset($thankYouRoutes[$validated['form_type']])
+            ? route($thankYouRoutes[$validated['form_type']])
+            : null;
+
         if ($request->wantsJson()) {
-            return response()->json(['success' => true, 'message' => 'Thank you! We will be in touch shortly.', 'redirect' => $validated['form_type'] === 'demo' ? route('demo.thankyou') : null]);
+            return response()->json(['success' => true, 'message' => 'Thank you! We will be in touch shortly.', 'redirect' => $thankYouUrl]);
         }
 
-        // Demo submissions land on a dedicated thank-you page (conversion page).
-        if ($validated['form_type'] === 'demo') {
-            return redirect()->route('demo.thankyou')->with('lead_submitted', 'demo');
+        if ($thankYouUrl) {
+            return redirect($thankYouUrl)->with('lead_submitted', $validated['form_type']);
         }
 
         return back()->with('success', 'Thank you! We will be in touch shortly.')->with('lead_form_type', $validated['form_type']);
