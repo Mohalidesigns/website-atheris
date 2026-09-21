@@ -9,9 +9,9 @@
 <!DOCTYPE html>
 <html lang="en-NG" class="scroll-smooth">
 <head>
-    {{-- Tracking is GTM-only. GA4 and the Meta Pixel are deployed as tags INSIDE
-         the GTM container (GTM-59B4JQCC) — do NOT hard-code gtag/fbq here or they
-         will double-fire. Page events are pushed to dataLayer; GTM tags consume them. --}}
+    {{-- GTM (GTM-59B4JQCC) hosts GA4 and other tags. The Meta Pixel is hard-coded
+         below (consent-gated) — do NOT also add the Pixel to the GTM container, or
+         it will double-fire. Page/lead events are also pushed to dataLayer for GTM. --}}
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -24,6 +24,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="google-site-verification" content="BSAzXuk2ml-2K-9ACNiNnhLNO_TQldxpHYgO2RHO7Sg">
+
+    {{-- Meta Pixel — consent-gated. Library loads but nothing is sent until the
+         visitor grants marketing consent ("Accept All" in the cookie banner).
+         "Essential Only" keeps it revoked. Pixel lives here only, NOT in GTM. --}}
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('consent', 'revoke');
+    fbq('init', '1115892094345456');
+    fbq('track', 'PageView');
+    try { if (localStorage.getItem('cookie_consent') === 'all') { fbq('consent', 'grant'); } } catch (e) {}
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1115892094345456&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
     @php
         $__title     = $metaTitle ?? "Atheris Limited — Africa's AI-First GRC Platform";
         $__desc      = $metaDescription ?? "Africa's only AI-first Governance, Risk & Compliance platform with native CBN, BOFIA, and NDPA compliance — purpose-built for Nigerian financial institutions.";
@@ -142,7 +165,7 @@
             </div>
             <div class="flex items-center gap-3 shrink-0">
                 <button @click="show = false; localStorage.setItem('cookie_consent', 'essential')" class="text-sm font-medium text-text-secondary hover:text-primary px-4 py-2 rounded-lg border border-border hover:border-primary transition">Essential Only</button>
-                <button @click="show = false; localStorage.setItem('cookie_consent', 'all')" class="text-sm font-semibold text-white bg-primary hover:bg-primary-light px-6 py-2 rounded-lg transition shadow-sm">Accept All</button>
+                <button @click="show = false; localStorage.setItem('cookie_consent', 'all'); if (window.fbq) fbq('consent', 'grant')" class="text-sm font-semibold text-white bg-primary hover:bg-primary-light px-6 py-2 rounded-lg transition shadow-sm">Accept All</button>
             </div>
         </div>
     </div>

@@ -14,6 +14,9 @@
     <script>
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({ event: 'generate_lead', form_type: @json($formType) });
+        {{-- Meta Pixel Lead event — thank-you pages only. Held until consent is
+             granted (consent-gated in the layout); never fires on /demo itself. --}}
+        if (window.fbq) { fbq('track', 'Lead'); }
     </script>
     @endpush
     @endif
