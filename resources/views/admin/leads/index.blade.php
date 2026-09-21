@@ -1,5 +1,16 @@
 <x-admin-layout title="Leads">
-    <h2 class="text-xl font-bold mb-6">Lead Management</h2>
+    <div class="flex items-center justify-between mb-6">
+        <h2 class="text-xl font-bold">Lead Management</h2>
+        @if(($testLeadCount ?? 0) > 0)
+        <form action="{{ route('admin.leads.destroy-test') }}" method="POST" onsubmit="return confirm('Delete all {{ $testLeadCount }} test lead(s) with @example.com emails? This cannot be undone.');">
+            @csrf @method('DELETE')
+            <button type="submit" class="inline-flex items-center gap-2 text-sm font-medium text-error border border-error/30 hover:bg-error/5 px-4 py-2 rounded-lg transition">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                Delete {{ $testLeadCount }} test lead{{ $testLeadCount === 1 ? '' : 's' }}
+            </button>
+        </form>
+        @endif
+    </div>
     <div class="bg-white rounded-xl border border-border overflow-hidden">
         <table class="w-full"><thead><tr class="bg-gray-50 border-b border-border text-left"><th class="p-4 text-xs font-semibold text-text-secondary uppercase">Name</th><th class="p-4 text-xs font-semibold text-text-secondary uppercase">Email</th><th class="p-4 text-xs font-semibold text-text-secondary uppercase">Company</th><th class="p-4 text-xs font-semibold text-text-secondary uppercase">Type</th><th class="p-4 text-xs font-semibold text-text-secondary uppercase">Status</th><th class="p-4 text-xs font-semibold text-text-secondary uppercase">Date</th><th class="p-4 text-xs font-semibold text-text-secondary uppercase text-right">Actions</th></tr></thead>
         <tbody class="divide-y divide-border">

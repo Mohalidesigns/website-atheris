@@ -27,7 +27,9 @@ class LeadController extends Controller
         }
 
         $leads = $query->paginate(25);
-        return view('admin.leads.index', compact('leads'));
+        // Test leads use the reserved example.com domain (RFC 2606) — never a real lead.
+        $testLeadCount = Lead::where('email', 'like', '%@example.com')->count();
+        return view('admin.leads.index', compact('leads', 'testLeadCount'));
     }
 
     public function show(Lead $lead)
@@ -46,5 +48,12 @@ class LeadController extends Controller
     {
         $lead->delete();
         return redirect()->route('admin.leads.index')->with('success', 'Lead deleted.');
+    }
+
+    /** Bulk-delete test leads (reserved example.com domain — safe, never real). */
+    public function destroyTest()
+    {
+        $count = Lead::where('email', 'like', '%@example.com')->delete();
+        return redirect()->route('admin.leads.index')->with('success', "{$count} test lead(s) deleted.");
     }
 }

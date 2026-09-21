@@ -83,6 +83,7 @@ Route::prefix('ath-admin')->middleware('auth')->name('admin.')->group(function (
     Route::resource('team', TeamController::class)->parameters(['team' => 'teamMember']);
     Route::resource('partners', PartnerController::class)->except(['show']);
     Route::get('/leads', [AdminLeadController::class, 'index'])->name('leads.index');
+    Route::delete('/leads/delete-test', [AdminLeadController::class, 'destroyTest'])->name('leads.destroy-test');
     Route::get('/leads/{lead}', [AdminLeadController::class, 'show'])->name('leads.show');
     Route::patch('/leads/{lead}/status', [AdminLeadController::class, 'updateStatus'])->name('leads.status');
     Route::delete('/leads/{lead}', [AdminLeadController::class, 'destroy'])->name('leads.destroy');
