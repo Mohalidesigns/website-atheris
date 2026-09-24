@@ -10,7 +10,10 @@
     {{-- Fire the conversion only on a genuine submission (session flash set by
          LeadController), so direct visits / refreshes don't inflate counts. --}}
     @if($formType && session('lead_submitted') === $formType)
-    @push('scripts')
+    {{-- Fire the conversion INLINE (no @push/@stack indirection) so there is no
+         chance of the line being dropped. Still gated on a genuine submission
+         (session flash from LeadController), so direct visits / refreshes never
+         inflate counts. fbq is defined in the <head>; the guard covers Essential-Only. --}}
     <script>
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({ event: 'generate_lead', form_type: @json($formType) });
@@ -18,7 +21,6 @@
              granted (consent-gated in the layout); never fires on /demo itself. --}}
         if (window.fbq) { fbq('track', 'Lead'); }
     </script>
-    @endpush
     @endif
 
     <section class="bg-gradient-hero py-24">
