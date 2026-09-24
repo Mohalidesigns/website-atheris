@@ -54,6 +54,39 @@
     src="https://www.facebook.com/tr?id=1115892094345456&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
+
+    {{-- LinkedIn Insight Tag — consent-gated. Unlike Meta, LinkedIn has no consent
+         API: insight.min.js drops cookies the instant it loads, so we gate the
+         LIBRARY INJECTION itself. It is injected only when marketing consent is
+         "all" — on page load for consented visitors, and by the "Accept All"
+         button for new ones. "Essential Only" / no choice => never injected.
+         Lives here only, NOT in GTM. Partner ID 9761754. --}}
+    <!-- LinkedIn Insight Tag -->
+    <script type="text/javascript">
+        _linkedin_partner_id = "9761754";
+        window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+        window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+        // Queue stub so lintrk() calls before the library loads are buffered
+        // (buffering alone sends nothing over the network).
+        window.lintrk = window.lintrk || function (a, b) { (window.lintrk.q = window.lintrk.q || []).push([a, b]); };
+        // Inject the analytics library at most once, only after consent is granted.
+        window.__loadLinkedInInsight = function () {
+            if (window.__liInsightLoaded) return;
+            window.__liInsightLoaded = true;
+            var s = document.getElementsByTagName("script")[0];
+            var b = document.createElement("script");
+            b.type = "text/javascript"; b.async = true;
+            b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+            s.parentNode.insertBefore(b, s);
+        };
+        (function () {
+            var granted = false;
+            try { granted = localStorage.getItem('cookie_consent') === 'all'; } catch (e) {}
+            if (granted) { window.__loadLinkedInInsight(); }
+        })();
+    </script>
+    <noscript><img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=9761754&fmt=gif" /></noscript>
+    <!-- End LinkedIn Insight Tag -->
     @php
         $__title     = $metaTitle ?? "Atheris Limited — Africa's AI-First GRC Platform";
         $__desc      = $metaDescription ?? "Africa's only AI-first Governance, Risk & Compliance platform with native CBN, BOFIA, and NDPA compliance — purpose-built for Nigerian financial institutions.";
@@ -172,7 +205,7 @@
             </div>
             <div class="flex items-center gap-3 shrink-0">
                 <button @click="show = false; localStorage.setItem('cookie_consent', 'essential')" class="text-sm font-medium text-text-secondary hover:text-primary px-4 py-2 rounded-lg border border-border hover:border-primary transition">Essential Only</button>
-                <button @click="show = false; localStorage.setItem('cookie_consent', 'all'); if (window.fbq) fbq('consent', 'grant')" class="text-sm font-semibold text-white bg-primary hover:bg-primary-light px-6 py-2 rounded-lg transition shadow-sm">Accept All</button>
+                <button @click="show = false; localStorage.setItem('cookie_consent', 'all'); if (window.fbq) fbq('consent', 'grant'); if (window.__loadLinkedInInsight) window.__loadLinkedInInsight()" class="text-sm font-semibold text-white bg-primary hover:bg-primary-light px-6 py-2 rounded-lg transition shadow-sm">Accept All</button>
             </div>
         </div>
     </div>
