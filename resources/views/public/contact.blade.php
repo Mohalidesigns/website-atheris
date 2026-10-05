@@ -80,6 +80,7 @@
                             <label class="block text-sm font-medium text-text-primary mb-1.5">Message *</label>
                             <textarea name="message" rows="4" required class="w-full px-4 py-3 rounded-lg border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none text-sm resize-none" placeholder="How can we help?">{{ old('message') }}</textarea>
                         </div>
+                        @include('partials.form-protection')
                         <button type="submit" class="w-full bg-accent hover:bg-accent-light text-white font-bold py-4 rounded-xl transition-all shadow-lg text-base">Send Message</button>
                         <p class="text-xs text-text-secondary text-center">By submitting, you agree to our <a href="/legal/privacy" class="underline">Privacy Policy</a>.</p>
                     </form>

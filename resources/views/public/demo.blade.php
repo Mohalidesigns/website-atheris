@@ -39,26 +39,30 @@
                     <div class="bg-secondary/10 text-secondary p-4 rounded-xl mb-6 font-medium">{{ session('success') }}</div>
                     @endif
 
+                    @if($errors->any())
+                    <div class="bg-error/10 text-error p-4 rounded-xl mb-6 text-sm">Please check the form and try again.</div>
+                    @endif
+
                     <form action="/leads" method="POST" class="space-y-5">
                         @csrf
                         <input type="hidden" name="form_type" value="demo">
                         <div class="grid grid-cols-2 gap-4">
                             <div>
                                 <label class="block text-sm font-medium text-text-primary mb-1.5">First Name *</label>
-                                <input type="text" name="first_name" required class="w-full px-4 py-3 rounded-lg border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none text-sm" placeholder="John">
+                                <input type="text" name="first_name" value="{{ old('first_name') }}" required class="w-full px-4 py-3 rounded-lg border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none text-sm" placeholder="John">
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-text-primary mb-1.5">Last Name *</label>
-                                <input type="text" name="last_name" required class="w-full px-4 py-3 rounded-lg border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none text-sm" placeholder="Doe">
+                                <input type="text" name="last_name" value="{{ old('last_name') }}" required class="w-full px-4 py-3 rounded-lg border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none text-sm" placeholder="Doe">
                             </div>
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-text-primary mb-1.5">Work Email *</label>
-                            <input type="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none text-sm" placeholder="john@institution.com">
+                            <input type="email" name="email" value="{{ old('email') }}" required class="w-full px-4 py-3 rounded-lg border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none text-sm" placeholder="john@institution.com">
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-text-primary mb-1.5">Company</label>
-                            <input type="text" name="company" class="w-full px-4 py-3 rounded-lg border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none text-sm" placeholder="Your Institution">
+                            <input type="text" name="company" value="{{ old('company') }}" class="w-full px-4 py-3 rounded-lg border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none text-sm" placeholder="Your Institution">
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-text-primary mb-1.5">Your Role</label>
@@ -75,12 +79,13 @@
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-text-primary mb-1.5">Phone</label>
-                            <input type="tel" name="phone" class="w-full px-4 py-3 rounded-lg border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none text-sm" placeholder="+234 ...">
+                            <input type="tel" name="phone" value="{{ old('phone') }}" class="w-full px-4 py-3 rounded-lg border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none text-sm" placeholder="+234 ...">
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-text-primary mb-1.5">Message (Optional)</label>
-                            <textarea name="message" rows="3" class="w-full px-4 py-3 rounded-lg border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none text-sm resize-none" placeholder="Tell us about your GRC challenges..."></textarea>
+                            <textarea name="message" rows="3" class="w-full px-4 py-3 rounded-lg border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none text-sm resize-none" placeholder="Tell us about your GRC challenges...">{{ old('message') }}</textarea>
                         </div>
+                        @include('partials.form-protection')
                         <button type="submit" class="w-full bg-accent hover:bg-accent-light text-white font-bold py-4 rounded-xl transition-all shadow-lg text-base">Book My Free Demo</button>
                         <p class="text-xs text-text-secondary text-center">By submitting, you agree to our <a href="/legal/privacy" class="underline">Privacy Policy</a>.</p>
                     </form>

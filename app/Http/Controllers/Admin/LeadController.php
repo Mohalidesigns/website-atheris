@@ -56,4 +56,17 @@ class LeadController extends Controller
         $count = Lead::where('email', 'like', '%@example.com')->delete();
         return redirect()->route('admin.leads.index')->with('success', "{$count} test lead(s) deleted.");
     }
+
+    /** Bulk-delete the leads selected via checkboxes on the index page. */
+    public function destroyMany(Request $request)
+    {
+        $ids = collect(explode(',', (string) $request->input('ids')))
+            ->map(fn ($id) => (int) trim($id))
+            ->filter()
+            ->all();
+
+        $count = $ids ? Lead::whereIn('id', $ids)->delete() : 0;
+
+        return redirect()->route('admin.leads.index')->with('success', "{$count} lead(s) deleted.");
+    }
 }

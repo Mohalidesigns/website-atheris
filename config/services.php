@@ -35,4 +35,12 @@ return [
         ],
     ],
 
+    // Cloudflare Turnstile (bot/CAPTCHA protection for public lead forms).
+    // Leave unset to disable: forms keep working, only the honeypot + timing
+    // trap + rate limiting apply. Set both to enable the challenge.
+    'turnstile' => [
+        'key' => env('TURNSTILE_KEY'),
+        'secret' => env('TURNSTILE_SECRET'),
+    ],
+
 ];

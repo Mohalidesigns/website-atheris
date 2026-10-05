@@ -60,8 +60,11 @@ Route::view('/partners/thank-you', 'public.partner-thank-you')->name('partner.th
 Route::get('/customers', [PageController::class, 'customers'])->name('customers');
 Route::get('/legal/privacy', [PageController::class, 'privacy'])->name('legal.privacy');
 Route::get('/legal/terms', [PageController::class, 'terms'])->name('legal.terms');
-Route::post('/leads', [LeadController::class, 'store'])->name('leads.store');
-Route::post('/newsletter', [LeadController::class, 'newsletter'])->name('newsletter.store');
+// Rate limited to blunt spam floods: 5 submissions per IP per 10 minutes.
+// (Lenient enough for staff/visitors sharing one corporate NAT IP; the
+// honeypot + Turnstile are the primary bot defences.)
+Route::post('/leads', [LeadController::class, 'store'])->middleware('throttle:5,10')->name('leads.store');
+Route::post('/newsletter', [LeadController::class, 'newsletter'])->middleware('throttle:5,10')->name('newsletter.store');
 
 // Sitemap
 Route::get('/sitemap.xml', function () {
@@ -84,6 +87,7 @@ Route::prefix('ath-admin')->middleware('auth')->name('admin.')->group(function (
     Route::resource('partners', PartnerController::class)->except(['show']);
     Route::get('/leads', [AdminLeadController::class, 'index'])->name('leads.index');
     Route::delete('/leads/delete-test', [AdminLeadController::class, 'destroyTest'])->name('leads.destroy-test');
+    Route::delete('/leads/bulk-delete', [AdminLeadController::class, 'destroyMany'])->name('leads.bulk-destroy');
     Route::get('/leads/{lead}', [AdminLeadController::class, 'show'])->name('leads.show');
     Route::patch('/leads/{lead}/status', [AdminLeadController::class, 'updateStatus'])->name('leads.status');
     Route::delete('/leads/{lead}', [AdminLeadController::class, 'destroy'])->name('leads.destroy');
