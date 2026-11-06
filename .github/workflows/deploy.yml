@@ -39,6 +39,12 @@ jobs:
           script: |
             cd ~/public_html
 
+            # Discard the previous run's asset upload before pulling. The upload
+            # step below overwrites manifest.json, which is tracked, so without
+            # this reset the pull aborts on "local changes would be overwritten"
+            # for any commit that touches it.
+            git checkout -- public/build || true
+
             # Pull latest code
             git pull origin main
 
@@ -57,4 +63,30 @@ jobs:
             # Restart queue workers if applicable
             php artisan queue:restart
 
+            # Guarantee the upload target exists and log its absolute path, so a
+            # failed upload can be diagnosed from the run log.
+            mkdir -p public/build/assets
+            echo "asset target: $(cd public/build && pwd)"
+
             echo "✅ Deployment complete"
+
+      # --- Upload the freshly built assets ---
+      # Must run AFTER the SSH step: git pull restores the tracked bundle, so
+      # this upload is what actually serves. Ordering it last also means a
+      # failure here degrades to the committed bundle rather than an unstyled
+      # site. Both paths go up in one tar, so manifest.json and the hashed
+      # assets it names are extracted together.
+      - name: Upload built assets
+        uses: appleboy/scp-action@v1.0.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          passphrase: ${{ secrets.SSH_PASSPHRASE }}
+          port: ${{ secrets.SSH_PORT }}
+          # Paths are archived relative to the workspace and extracted into
+          # target, so these land in ~/public_html/public/build/. Do NOT set
+          # rm: true here -- target is the application root.
+          source: "public/build/assets,public/build/manifest.json"
+          target: "~/public_html"
+          overwrite: true
