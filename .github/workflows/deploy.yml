@@ -48,22 +48,6 @@ jobs:
             # Pull latest code
             git pull origin main
 
-            # --- TEMPORARY composer probe ---
-            # `composer install` has failed with "command not found" on every
-            # deploy since at least 2026-10-05, silently: this script has no
-            # `set -e`, so the step still reported success. Non-interactive SSH
-            # shells get a minimal PATH, so locate composer before fixing the
-            # call. Remove this block once the real path is known.
-            echo "--- composer probe ---"
-            echo "PATH: $PATH"
-            echo "php (this shell): $(command -v php || echo MISSING)"
-            echo "composer (this shell): $(command -v composer || echo MISSING)"
-            echo "composer (login shell): $(bash -lc 'command -v composer' 2>/dev/null || echo MISSING)"
-            for p in /opt/cpanel/composer/bin/composer /usr/local/bin/composer /usr/bin/composer "$HOME/bin/composer" "$HOME/composer.phar"; do
-              if [ -e "$p" ]; then echo "found: $p"; else echo "absent: $p"; fi
-            done
-            echo "--- end probe ---"
-
             # Install/update PHP dependencies
             composer install --no-dev --optimize-autoloader
 
