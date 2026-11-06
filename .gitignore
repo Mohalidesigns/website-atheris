@@ -9,6 +9,7 @@
 /.idea
 /.nova
 /.phpunit.cache
+/.qwen
 /.vscode
 /.zed
 /auth.json
