@@ -1,0 +1,89 @@
+# .github/workflows/install-composer.yml
+#
+# ONE-OFF MAINTENANCE WORKFLOW -- delete this file once Composer is confirmed
+# installed on the host.
+#
+# Triggered only by workflow_dispatch, so it can never run on a push. It exists
+# because Composer was found to be entirely absent from the server (see commit
+# 5166ffa, which probed PATH, a login shell, /opt/cpanel/composer/bin,
+# /usr/local/bin, /usr/bin, ~/bin and ~/composer.phar), and the host credentials
+# live only in repository secrets -- there is no local SSH path to it.
+#
+# ~/bin is already on the deploy PATH, so installing there needs no change to
+# deploy.yml. Once this succeeds, remove the `if command -v composer` guard from
+# deploy.yml so `set -e` enforces the install step.
+
+name: Install Composer on server (one-off)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install Composer into ~/bin
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          passphrase: ${{ secrets.SSH_PASSPHRASE }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            set -e
+
+            echo "--- host context ---"
+            echo "whoami: $(whoami)"
+            echo "HOME:   $HOME"
+            php -v | head -1
+
+            # Idempotent: if it is already there, report and stop.
+            if command -v composer >/dev/null 2>&1; then
+              echo "composer already installed at $(command -v composer)"
+              composer --version
+              exit 0
+            fi
+
+            mkdir -p "$HOME/bin"
+            TMP="$(mktemp -d)"
+            trap 'rm -rf "$TMP"' EXIT
+
+            # curl is nearly universal but not guaranteed; php is, since the app
+            # runs on it.
+            fetch() {
+              if command -v curl >/dev/null 2>&1; then
+                curl -fsSL -o "$1" "$2"
+              else
+                php -r "copy('$2', '$1');"
+              fi
+            }
+
+            echo "--- downloading installer and published hash ---"
+            fetch "$TMP/composer-setup.php" https://getcomposer.org/installer
+            fetch "$TMP/installer.sig" https://composer.github.io/installer.sig
+
+            # Verify before executing. The published signature is the SHA-384 of
+            # the installer, so a tampered or truncated download aborts here
+            # rather than running as this user.
+            EXPECTED="$(tr -d '[:space:]' < "$TMP/installer.sig")"
+            ACTUAL="$(php -r "echo hash_file('sha384', '$TMP/composer-setup.php');")"
+            echo "expected sha384: $EXPECTED"
+            echo "actual   sha384: $ACTUAL"
+            if [ -z "$EXPECTED" ] || [ "$EXPECTED" != "$ACTUAL" ]; then
+              echo "FATAL: installer hash mismatch or empty signature -- aborting"
+              exit 1
+            fi
+            echo "installer verified against composer.github.io/installer.sig"
+
+            echo "--- installing ---"
+            php "$TMP/composer-setup.php" --install-dir="$HOME/bin" --filename=composer
+            chmod 755 "$HOME/bin/composer"
+
+            echo "--- result ---"
+            ls -l "$HOME/bin/composer"
+            "$HOME/bin/composer" --version
+            # A non-interactive shell may not include ~/bin; the deploy PATH does.
+            echo "on this shell's PATH: $(command -v composer || echo 'no (expected if ~/bin is absent here)')"
+            echo "on the deploy PATH:   $(PATH="$HOME/bin:$PATH" command -v composer)"
