@@ -1,9 +1,34 @@
-@import 'tailwindcss';
+@import 'tailwindcss' source(none);
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
+/* source(none) makes the @source list below authoritative. Without it those
+   directives only ADD to automatic detection, so the scanner also walked all
+   266 tracked files -- README, ~30 docs/seo markdown files, the .docx binaries
+   and .github/workflows/deploy.yml. Any word in those that matched a real
+   utility name leaked into the bundle: adding the text "--- end probe ---" to
+   deploy.yml emitted `.end` and changed the CSS hash, busting every visitor's
+   cache on a commit that touched no frontend code.
+
+   Two machine-dependent sources are deliberately excluded, so that a local
+   build and a CI build of the same commit produce the same CSS:
+
+     - storage/framework/views/*.php   Compiled Blade is derived state. This
+       machine held 43 stale compiled files while a fresh CI checkout holds
+       none, which alone accounted for ~13 kB of difference. Every class in a
+       compiled view originates in a .blade.php source, which the glob below
+       already covers.
+
+     - vendor/.../Pagination/views     vendor/ is gitignored and the deploy
+       workflow never runs composer install, so this path silently matched
+       nothing in CI and Laravel's pagination utilities never reached the
+       production bundle -- leaving {{ $posts->links() }} unstyled on the
+       public blog. Those views are now published to
+       resources/views/vendor/pagination/, which the glob below picks up in
+       every environment. */
+
 @source '../**/*.blade.php';
 @source '../**/*.js';
+/* Seeds Tailwind-classed HTML into the database, rendered later as raw content. */
+@source '../../database/seeders/PageSettingsSeeder.php';
 
 /* ── Fedra Sans ───────────────────────────────────────────────────────────
    Self-hosted WOFF2 from public/fonts/fedra-sans. Three cuts: Light (300),
