@@ -55,19 +55,12 @@ jobs:
             # Pull latest code
             git pull origin main
 
-            # Install/update PHP dependencies.
-            # Guarded because composer is NOT installed on the server: the probe
-            # in 5166ffa found it absent from the deploy PATH, from a login shell
-            # and from /opt/cpanel/composer/bin, /usr/local/bin, /usr/bin, ~/bin
-            # and ~/composer.phar. Under `set -e` an unguarded call would fail
-            # every deploy until that is fixed. ~/bin is already on the deploy
-            # PATH, so installing composer there needs no change here -- then
-            # drop this guard and let `set -e` enforce it.
-            if command -v composer >/dev/null 2>&1; then
-              composer install --no-dev --optimize-autoloader
-            else
-              echo "WARNING: composer not found -- PHP dependencies were NOT updated"
-            fi
+            # Install/update PHP dependencies. Composer 2.11.1 lives in ~/bin,
+            # which is on the deploy PATH. Left unguarded so that `set -e` fails
+            # the deploy if dependencies cannot be installed -- the previous
+            # guard logged a warning and continued, and before that an unguarded
+            # failure went unnoticed for a month.
+            composer install --no-dev --optimize-autoloader
 
             # Run DB migrations
             php artisan migrate --force
