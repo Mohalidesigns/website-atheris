@@ -121,6 +121,14 @@
                                 ['dashboard', 'Dashboard (Hero)', 'SecondLine dashboard shown in the hero section'],
                                 ['exceptions', 'Exception Verification', 'Screenshot for the Exception Tracker section'],
                             ],
+                            'it-governance' => [
+                                ['dashboard', 'Asset Register', 'Screenshot for the See It in Action section (asset register)'],
+                                ['architecture', 'Governance Dashboard', 'Screenshot for the See It in Action section (KRI / governance dashboard)'],
+                            ],
+                            'information-security' => [
+                                ['dashboard', 'Incident Management', 'Screenshot for the See It in Action section (incident pipeline)'],
+                                ['change', 'Change Register', 'Screenshot for the See It in Action section (change register)'],
+                            ],
                             default => [
                                 ['dashboard', 'Dashboard (Hero)', 'Main dashboard shown in the hero section'],
                                 ['work_programs', 'Work Programs', 'Screenshot for the Work Programs & Fieldwork section'],

@@ -43,6 +43,14 @@ class SolutionMetaSeeder extends Seeder
                 'meta_title' => 'ESG Management & Sustainability Reporting Software | Atheris',
                 'meta_description' => 'AI-powered ESG management with multi-framework reporting (GRI, SASB, TCFD, NGX), automated data collection, and ESG risk scoring calibrated for the Nigerian market.',
             ],
+            'it-governance' => [
+                'meta_title' => 'IT Governance Software for Nigerian Banks | Atheris',
+                'meta_description' => 'IT asset register, change governance, KRI monitoring, CAPA tracking, and board reporting for Nigerian financial institutions. CBN and NDPA 2023 aligned.',
+            ],
+            'information-security' => [
+                'meta_title' => 'Information Security Management Software for Nigerian Banks | Atheris',
+                'meta_description' => 'Security incident management, vulnerability remediation, tamper-evident evidence register, and security KRI dashboards for Nigerian banks and financial institutions.',
+            ],
         ];
 
         foreach ($meta as $slug => $fields) {

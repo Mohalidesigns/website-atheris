@@ -67,6 +67,8 @@
                                     <a href="/solutions/controls-management" class="block p-2 rounded-lg hover:bg-bg transition text-sm font-medium text-text-primary">Internal Control Management</a>
                                     <a href="/solutions/compliance-management" class="block p-2 rounded-lg hover:bg-bg transition text-sm font-medium text-text-primary">Compliance Management</a>
                                     <a href="/solutions/esg-management" class="block p-2 rounded-lg hover:bg-bg transition text-sm font-medium text-text-primary">ESG Management</a>
+                                    <a href="/solutions/it-governance" class="block p-2 rounded-lg hover:bg-bg transition text-sm font-medium text-text-primary">IT Governance</a>
+                                    <a href="/solutions/information-security" class="block p-2 rounded-lg hover:bg-bg transition text-sm font-medium text-text-primary">Information Security</a>
                                     <a href="/solutions" class="block p-2 rounded-lg hover:bg-bg transition text-sm font-semibold text-primary">All Solutions &rarr;</a>
                                 </div>
                             </div>
@@ -201,6 +203,8 @@
                     <a href="/solutions/controls-management" class="block py-2 text-sm text-text-secondary hover:text-primary">Internal Control Management</a>
                     <a href="/solutions/compliance-management" class="block py-2 text-sm text-text-secondary hover:text-primary">Compliance Management</a>
                     <a href="/solutions/esg-management" class="block py-2 text-sm text-text-secondary hover:text-primary">ESG Management</a>
+                    <a href="/solutions/it-governance" class="block py-2 text-sm text-text-secondary hover:text-primary">IT Governance</a>
+                    <a href="/solutions/information-security" class="block py-2 text-sm text-text-secondary hover:text-primary">Information Security</a>
                     <a href="/solutions" class="block py-2 text-sm font-semibold text-primary">All Solutions &rarr;</a>
                 </div>
 

@@ -70,6 +70,8 @@
                     <li><a href="/solutions/controls-management" class="text-sm text-white/60 hover:text-accent transition">Internal Control Management</a></li>
                     <li><a href="/solutions/compliance-management" class="text-sm text-white/60 hover:text-accent transition">Compliance</a></li>
                     <li><a href="/solutions/esg-management" class="text-sm text-white/60 hover:text-accent transition">ESG Management</a></li>
+                    <li><a href="/solutions/it-governance" class="text-sm text-white/60 hover:text-accent transition">IT Governance</a></li>
+                    <li><a href="/solutions/information-security" class="text-sm text-white/60 hover:text-accent transition">Information Security</a></li>
                 </ul>
             </div>
 

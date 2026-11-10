@@ -7,7 +7,7 @@
         <div class="max-w-7xl mx-auto px-4 text-center">
             <span class="inline-flex items-center gap-2 bg-white/10 text-white/90 text-sm font-medium px-4 py-2 rounded-full mb-6">The Atheris GRC Suite</span>
             <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">GRC Software Modules for Nigerian Financial Institutions</h1>
-            <p class="text-lg text-white/70 max-w-2xl mx-auto">One integrated platform for governance, risk and compliance — audit, risk, control, compliance and ESG, built for CBN, BOFIA and NDPA. Choose a module or run the full suite.</p>
+            <p class="text-lg text-white/70 max-w-2xl mx-auto">One integrated platform for governance, risk and compliance — audit, risk, control, compliance, ESG, IT governance and information security, built for CBN, BOFIA and NDPA. Choose a module or run the full suite.</p>
         </div>
     </section>
 
@@ -42,7 +42,7 @@
     @php $faqs = [
         ['q' => "What is a GRC suite?", 'a' => "A GRC suite is a set of integrated modules — internal audit, enterprise risk, internal control, compliance and ESG — that share one system. Atheris provides a GRC suite built for Nigerian financial institutions, so governance, risk and compliance work connects rather than living in separate tools."],
         ['q' => "Can I use one Atheris module or do I need the whole suite?", 'a' => "You can start with a single module — for example internal audit or compliance — and add others over time. Because Atheris is one integrated platform, adopting further modules later reuses the same data, controls and evidence rather than starting again."],
-        ['q' => "Which GRC modules does Atheris offer?", 'a' => "Atheris offers five GRC modules: Internal Audit Management, Enterprise Risk Management, Internal Control Management, Compliance Management and ESG Management. Each is built for Nigerian regulation (CBN, BOFIA, NDPA) and works standalone or as part of the integrated suite."],
+        ['q' => "Which GRC modules does Atheris offer?", 'a' => "Atheris offers seven GRC modules: Internal Audit Management, Enterprise Risk Management, Internal Control Management, Compliance Management, ESG Management, IT Governance and Information Security. Each is built for Nigerian regulation (CBN, BOFIA, NDPA) and works standalone or as part of the integrated suite."],
         ['q' => "Are the Atheris GRC modules built for Nigerian regulation?", 'a' => "Yes. Every module is designed around Nigerian regulatory requirements — CBN circulars, BOFIA 2020, NDPA 2023 and AML/CFT — rather than adapting a generic international platform, with data hosted in Nigeria for NDPA alignment."],
     ]; @endphp
     <x-faq :items="$faqs" title="GRC Suite — FAQs" />
