@@ -65,6 +65,11 @@ jobs:
             # Run DB migrations
             php artisan migrate --force
 
+            # Seed the GRC solution modules (idempotent updateOrCreate). The
+            # nav/footer link to these slugs unconditionally, so a deploy
+            # without the seed 404s the new solution pages.
+            php artisan db:seed --class=SolutionSeeder --force
+
             # Clear and rebuild caches
             php artisan config:cache
             php artisan route:cache
